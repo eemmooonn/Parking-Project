@@ -18,7 +18,7 @@ body{
 }
 .container{
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -45,7 +45,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 80vh;
+    min-height: 550px;
     background-color: #fff;
     overflow: auto;
 }
