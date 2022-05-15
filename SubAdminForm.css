@@ -113,7 +113,7 @@ form .fields .input-field{
     color: #fff;
     border-radius: 5px;
     margin: 25px 0;
-    background-color: #4070f4;
+    background-color: rgb(75, 81, 88);
     transition: all 0.3s linear;
     cursor: pointer;
 }
@@ -122,7 +122,7 @@ form .fields .input-field{
     font-weight: 400;
 }
 form button:hover{
-    background-color: #1b4bcd;
+    background-color: rgb(42, 47, 52);
 }
 form button i,
 form .backBtn i{

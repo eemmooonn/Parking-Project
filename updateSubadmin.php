@@ -86,38 +86,38 @@ if(isset($_POST['submit']))
 
             <div class="input-field">
               <label>Full Name</label>
-              <input type="text" name="name" id="" class="form-control" placeholder="Enter your name" required value=<?php echo $name;?>/>
+              <input type="text" name="name" id="" class="form-control" placeholder="Enter your name" required value=<?php echo $name;?>>
             </div>
 
             <div class="input-field">
               <label>Email</label>
-              <input type="text" name="email" id="" class="form-control" placeholder="Enter your email address" required value=<?php echo $email;?>/>
+              <input type="text" name="email" id="" class="form-control" placeholder="Enter your email address" required value=<?php echo $email;?>>
             </div>
 
             <div class="input-field">
               <label>Mobile Number</label>
-              <input type="number" name="mobile" id="" class="form-control" placeholder="Enter mobile number" required value=<?php echo $mobile;?>/>
+              <input type="number" name="mobile" id="" class="form-control" placeholder="Enter mobile number" required value=<?php echo $mobile;?>>
             </div>
 
             <div class="input-field">
               <label for="">Full address:</label>
-              <input type="string" name="address" id="" class="form-control" placeholder="Enter parking address" value=<?php echo $address;?>/>
+              <input type="string" name="address" id="" class="form-control" placeholder="Enter parking address" value=<?php echo $address;?>>
             </div>
 
             <div class="input-field">
               <label for="">Security Guard Number(if available):</label>
-              <input type="number" name="security" id="" class="form-control" placeholder="Enter security guard number" value=<?php echo $security;?>/>
+              <input type="number" name="security" id="" class="form-control" placeholder="Enter security guard number" value=<?php echo $security;?>>
             </div>
 
             <div class="input-field">
               <label for="">Division:</label>
-              <input type="text" name="division" id="" class="form-control" placeholder="Enter the division" required value=<?php echo $division;?>/>
+              <input type="text" name="division" id="" class="form-control" placeholder="Enter the division" required value=<?php echo $division;?>>
             </div>
             
 
             <div class="input-field">
               <label for="">Bike</label>
-              <select name="bike" id="" value=<?php echo $bike;?>>
+              <select name="bike" id="" select=<?php echo $bike;?>>
                 <option disabled selected>Is this parking allow bikes?</option>
                 <option>Yes</option>
                 <option>No</option>
@@ -126,7 +126,7 @@ if(isset($_POST['submit']))
 
             <div class="input-field">
               <label for="">Total Bike Slot(if allowed):</label>
-              <input type="number" name="bikeslot" id="" class="form-control" placeholder="Enter total bike slot" value=<?php echo $bikeslot;?>/>
+              <input type="number" name="bikeslot" id="" class="form-control" placeholder="Enter total bike slot" value=<?php echo $bikeslot;?>>
             </div>
 
             <div class="input-field">
@@ -140,17 +140,17 @@ if(isset($_POST['submit']))
 
             <div class="input-field">
               <label for="">Total Car Slot(if allowed):</label>
-              <input type="number" name="carslot" id="" class="form-control" placeholder="Enter total car slot" value=<?php echo $carslot;?>/>
+              <input type="number" name="carslot" id="" class="form-control" placeholder="Enter total car slot" value=<?php echo $carslot;?>>
             </div>
 
             <div class="input-field">
               <label for="">Parking Opening Time: </label>
-              <input type="time" name="opentime" id="" class="form-control" placeholder="Select the parking opening time" value=<?php echo $opentime;?>/>
+              <input type="time" name="opentime" id="" class="form-control" placeholder="Select the parking opening time" value=<?php echo $opentime;?>>
             </div>
 
             <div class="input-field">
               <label for="">Parking Closing Time: </label>
-              <input type="time" name="endtime" id="" class="form-control" placeholder="Select the parking colsing time" value=<?php echo $endtime;?>/>
+              <input type="time" name="endtime" id="" class="form-control" placeholder="Select the parking colsing time" value=<?php echo $endtime;?>>
             </div>
             
             <div class="input-field">
