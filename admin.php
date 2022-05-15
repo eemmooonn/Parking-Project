@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-<body>
+<body style>
     <div class="container">
         <button class= "btn btn-primary my-5"><a href="SubAdminForm.php" class="text-light">Add Subadmin</a>
 
@@ -34,7 +34,7 @@
       <th scope="col">Allow Car</th>
       <th scope="col">Total Car's Slot</th>
       <th scope="col">Opening Time</th>
-      <th scope="col">Ending Time</th>
+      <th scope="col">Closing Time</th>
       <th scope="col">Place Category</th>
       <th scope="col">Facility</th>
       <th scope="col">Parking Place</th>
