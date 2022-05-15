@@ -49,10 +49,10 @@ if(isset($_POST['submit']))
     <title>Registration</title>
   </head>
   <body>
-    <div>
-      
-    </div>
     <div class="container">
+    <nav id="navBar">
+        <a href="index.html"><img src="images/logo.png" class="logo" /></a>
+    </nav>
     <form method="post"> 
 
       <header>Registration Form</header>
