@@ -117,7 +117,7 @@ if(isset($_POST['submit']))
 
             <div class="input-field">
               <label for="">Bike</label>
-              <select name="bike" id="" select=<?php echo $bike;?>>
+              <select name="bike" id="" value=<?php echo $bike;?>>
                 <option disabled selected>Is this parking allow bikes?</option>
                 <option>Yes</option>
                 <option>No</option>
