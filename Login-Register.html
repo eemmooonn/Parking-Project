@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
     <link rel="stylesheet" href="Login-Register.css" />
     <!-- Fontawesome CDN Link -->
     <link
@@ -46,42 +44,63 @@
                   <input type="submit" value="Sumbit" />
                 </div>
                 <div class="text sign-up-text">
-                  Don't have an account? <label for="flip">Register now</label>
+                  Don't have an account?
+                  <label for="flip">Register now</label>
                 </div>
               </div>
             </form>
           </div>
+
           <div class="signup-form">
             <div class="title">Register</div>
-            <form action="#">
+            <form action="insert_user.php" method="POST">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" placeholder="Enter your name" required />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  />
                 </div>
+
                 <div class="input-box">
                   <i class="fas fa-phone"></i>
                   <input
                     type="number"
+                    name="phone"
                     placeholder="Enter your phone number"
                     required
                   />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input
                     type="password"
+                    name="password"
                     placeholder="Enter your password"
                     required
                   />
                 </div>
                 <div class="button input-box">
-                  <input type="submit" value="Sumbit" />
+                  <input
+                    type="submit"
+                    name="submit"
+                    class="submit"
+                    value="Sumbit"
+                  />
                 </div>
+
                 <div class="text sign-up-text">
                   Already have an account? <label for="flip">Login now</label>
                 </div>
