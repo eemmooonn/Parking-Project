@@ -159,8 +159,12 @@ if(isset($_POST['submit']))
                 <option>Both(Indoor+Outdoor)</option>
               </select>
             </div>
-
+            
             <button type="submit" class="submit" name="submit">Submit</button>
+            <div class= "log_In">
+                  Already have an account?
+                  <a class="loginNow" href="SubAdminLogin.html">Login now</a>
+            </div>
           </div>
         </div>
       

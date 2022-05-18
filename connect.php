@@ -1,7 +1,8 @@
 <?php
 $con=mysqli_connect("localhost", "root", "", "parko");
-if(!$con){
-  die(mysqli_error($con));
+if(mysqli_connect_error())
+{
+  echo "Cannot Connect";
 }
 
-  ?>
+?>

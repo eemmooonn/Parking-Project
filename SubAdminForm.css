@@ -148,6 +148,19 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
+.log_In{
+    font-size: 15px;
+    font-weight: 500;
+}
+.loginNow{
+    color: #3626e2;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+.loginNow:hover{
+    text-decoration: underline;
+}
 
 @media (max-width: 750px) {
     .container form{

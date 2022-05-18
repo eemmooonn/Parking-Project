@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="Login-Register.css" />
+    <link rel="stylesheet" href="login_register.css" />
     <!-- Fontawesome CDN Link -->
     <link
       rel="stylesheet"
@@ -23,34 +23,6 @@
       </div>
       <div class="forms">
         <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-            <form action="#">
-              <div class="input-boxes">
-                <div class="input-box">
-                  <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required />
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-lock"></i>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    required
-                  />
-                </div>
-                <div class="text"><a href="#">Forgot password?</a></div>
-                <div class="button input-box">
-                  <input type="submit" value="Sumbit" />
-                </div>
-                <div class="text sign-up-text">
-                  Don't have an account?
-                  <label for="flip">Register now</label>
-                </div>
-              </div>
-            </form>
-          </div>
-
           <div class="signup-form">
             <div class="title">Register</div>
             <form action="insert_user.php" method="POST">
@@ -102,7 +74,8 @@
                 </div>
 
                 <div class="text sign-up-text">
-                  Already have an account? <label for="flip">Login now</label>
+                  Already have an account?
+                  <a href="user_login.html">Login now</a>
                 </div>
               </div>
             </form>
