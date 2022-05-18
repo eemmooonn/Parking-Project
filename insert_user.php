@@ -8,7 +8,7 @@ if(!empty($name) || !empty($phone) || !empty($email) || !empty($password)){
     $host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "user_list";
+    $dbName = "parko";
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
