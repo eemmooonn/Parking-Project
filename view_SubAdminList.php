@@ -125,9 +125,7 @@
                                     <td>'.$password.'</td>
 
                                     <td>
-                                    <button class= "btn btn-primary"><a href="exapmle.php? updateid='.$id.'" class="text-light">Update</a>
-                                    </button>
-                                    <button class= "btn btn-danger"><a href="example.php? deleteid='.$id.'" class="text-light">Delete</a>
+                                    <button><a href="SubAdminDelete.php? deleteid='.$id.'">Delete</a>
                                     </button>
                                     </td>
 
