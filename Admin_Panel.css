@@ -9,7 +9,7 @@
 
 :root{
     /* ===== Colors ===== */
-    --primary-color: #0E4BF1;
+    --primary-color: #ffffff;
     --panel-color: #FFF;
     --text-color: #000;
     --black-light-color: #707070;
@@ -80,6 +80,37 @@ nav{
 nav.close{
     width: 73px;
 }
+.AdminHome{
+    text-decoration: none;
+}
+.styled-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #1e3e94;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #183175;
+}
+
 nav .logo-name{
     display: flex;
     align-items: center;
@@ -131,7 +162,7 @@ nav .menu-items{
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: #0E4BF1;
 }
 body.dark li a:hover:before{
     background-color: var(--text-color);
@@ -157,7 +188,7 @@ nav.close li a .link-name{
 }
 .nav-links li a:hover i,
 .nav-links li a:hover .link-name{
-    color: var(--primary-color);
+    color: #0E4BF1;
 }
 body.dark .nav-links li a:hover i,
 body.dark .nav-links li a:hover .link-name{

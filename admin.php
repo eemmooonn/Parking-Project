@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-    ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -16,7 +16,6 @@
 <body style>
     <div class="container">
         <button class= "btn btn-primary my-5"><a href="SubAdminForm.php" class="text-light">Add Subadmin</a>
-
     </button>
      <center><h2>Sub-Admin List</h2></center><br><br>
     <table class="table">
