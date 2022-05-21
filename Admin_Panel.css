@@ -39,13 +39,13 @@ body{
     background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: #0b3cc1;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+    background: #062b92;
 }
 
 body.dark::-webkit-scrollbar-thumb:hover,
