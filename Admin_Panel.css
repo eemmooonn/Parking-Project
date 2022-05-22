@@ -258,17 +258,18 @@ nav.close ~ .dashboard .top{
     margin: 0 30px;
 }
 .top .search-box input{
-    position: absolute;
+    position: relative;
     border: 1px solid var(--border-color);
     background-color: var(--panel-color);
     padding: 0 25px 0 50px;
-    border-radius: 5px;
+    border-radius: 50px;
     height: 100%;
     width: 100%;
     color: var(--text-color);
     font-size: 15px;
     font-weight: 400;
     outline: none;
+    border-color: #1e3e94;
 }
 .top .search-box i{
     position: absolute;
@@ -278,6 +279,23 @@ nav.close ~ .dashboard .top{
     top: 50%;
     transform: translateY(-50%);
     color: var(--black-light-color);
+}
+.top .search-box button{
+    position: absolute;
+    height: 100%;
+    padding: 0 25px;
+    outline: none;
+    border-style: solid;
+    border-color: white;
+    background: #1e3e94;
+    color: white;
+    border-radius: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.top .search-box button:hover{
+    background: #163077;
 }
 .top img{
     width: 35px;
@@ -290,6 +308,10 @@ nav.close ~ .dashboard .top{
     align-items: center;
     margin: 60px 0 30px 0;
 }
+
+.dash-content .overview a{
+    text-decoration: none;
+}
 .dash-content .title i{
     position: relative;
     height: 35px;
@@ -301,12 +323,17 @@ nav.close ~ .dashboard .top{
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    
 }
 .dash-content .title .text{
     font-size: 24px;
     font-weight: 500;
     color: var(--text-color);
     margin-left: 10px;
+    
+}
+.dash-content .title .text:hover{
+    color: #1e3e94;
 }
 .dash-content .boxes{
     display: flex;

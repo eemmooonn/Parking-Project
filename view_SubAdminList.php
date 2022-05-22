@@ -71,11 +71,16 @@
     </nav>
 
     <section class="dashboard">
+
       <div class="top">
-        <div class="search-box">
-          <i class="uil uil-search"></i>
-          <input type="text" placeholder="Search here..." />
-        </div>
+        <form action="" method="POST" class="search-box">
+          <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" name="search-text" placeholder="Search here by ID or Email" required/>
+            <button type="submit" class="search" name="search-btn">Search</button>
+          </div>
+        </form>
+
         <div>
           <span class="admin_name"><?php echo $_SESSION['AdminLoginName']?></span>
           <img src="images/profile.png" alt="" />
@@ -85,10 +90,12 @@
 
       <div class="dash-content">
         <div class="overview">
-          <div class="title">
-            <i class="uil uil-map-marker-info"></i>
-            <span class="text">Sub-Admin List</span>
-          </div>
+          <a href="view_SubAdminList.php">
+            <div class="title">
+              <i class="uil uil-map-marker-info"></i>
+              <span class="text">Sub-Admin List</span>
+            </div>
+          </a>
         </div>
 
         <div class="activity">
@@ -105,6 +112,48 @@
                 </thead>
                 <tbody>
                     <?php
+                      if (isset($_POST['search-btn'])) 
+                      {
+                        $SearchText=$_POST['search-text'];
+                        $sql_search="SELECT * FROM `subadmin_list` WHERE id='$SearchText' OR email LIKE '%$SearchText%'";
+                        $SearchResult= mysqli_query($con, $sql_search);
+                        if (mysqli_num_rows($SearchResult)>0) 
+                        {
+                          while($row=mysqli_fetch_assoc($SearchResult))
+                          {
+                                $id=$row['id'];
+                                $name = $row["name"];
+                                $phone = $row["phone"];
+                                $email = $row["email"];
+                                $password = $row["password"];
+
+                                echo'
+                                <tr>
+                                    <th scope="row">'.$id.'</th>
+                                    <td>'.$name.'</td>
+                                    <td>'.$phone.'</td>
+                                    <td>'.$email.'</td>
+                                    <td>'.$password.'</td>
+
+                                    <td>
+                                    <button><a href="SubAdminDelete.php? deleteid='.$id.'">Delete</a>
+                                    </button>
+                                    </td>
+
+                                </tr>';
+                          }
+                        }
+                        else
+                        {
+                            echo'
+                            <tr>
+                              <td colspan="5">No Record Found</td>
+                            </tr>
+                            ';
+                        }
+                      }
+                      else
+                      {
                         $sql="SELECT * FROM `subadmin_list`";
                         $result=mysqli_query($con,$sql);
                         if($result)
@@ -135,6 +184,7 @@
 
                             }
                         }
+                      }
 
                     ?>
                 </tbody>

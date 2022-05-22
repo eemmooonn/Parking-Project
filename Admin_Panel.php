@@ -72,10 +72,14 @@
 
     <section class="dashboard">
       <div class="top">
-        <div class="search-box">
-          <i class="uil uil-search"></i>
-          <input type="text" placeholder="Search here..." />
-        </div>
+        <form action="" method="" class="search-box">
+          <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" name="search-text" placeholder="Search here by ID or Email" required/>
+            <button type="submit" class="search" name="search-btn">Search</button>
+          </div>
+        </form>
+          
         <div>
           <span class="admin_name"><?php echo $_SESSION['AdminLoginName']?></span>
           <img src="images/profile.png" alt="" />
@@ -85,11 +89,12 @@
 
       <div class="dash-content">
         <div class="overview">
-          <div class="title">
-            <i class="uil uil-estate"></i>
-            <span class="text">Dashboard</span>
-          </div>
-
+            <a href="Admin_Panel.php">
+              <div class="title">
+                <i class="uil uil-map-marker-info"></i>
+                <span class="text">Dahsboard</span>
+              </div>
+            </a>
           <div class="boxes">
 
             <div class="box box1">
@@ -117,7 +122,7 @@
             <div class="box box3">
               <i class="uil uil-coins"></i>
               <span class="text">Total Earning</span>
-              <span class="number">1,47,550 TK</span>
+              <span class="number">14,550 TK</span>
             </div>
           </div>
         </div>
