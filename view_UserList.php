@@ -86,6 +86,7 @@
       <div class="dash-content">
         <div class="overview">
           <div class="title">
+            <i class="uil uil-users-alt"></i>
             <span class="text">User List</span>
           </div>
         </div>

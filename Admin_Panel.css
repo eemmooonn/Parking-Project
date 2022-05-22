@@ -294,7 +294,7 @@ nav.close ~ .dashboard .top{
     position: relative;
     height: 35px;
     width: 35px;
-    background-color: var(--primary-color);
+    background-color: #0E4BF1;
     border-radius: 6px;
     color: var(--title-icon-color);
     display: flex;
@@ -340,7 +340,7 @@ nav.close ~ .dashboard .top{
     color: var(--text-color);
 }
 .boxes .box.box2{
-    background-color: var(--box2-color);
+    background-color: rgb(92, 243, 97);
 }
 .boxes .box.box3{
     background-color: var(--box3-color);

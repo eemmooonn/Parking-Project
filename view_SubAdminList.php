@@ -86,6 +86,7 @@
       <div class="dash-content">
         <div class="overview">
           <div class="title">
+            <i class="uil uil-map-marker-info"></i>
             <span class="text">Sub-Admin List</span>
           </div>
         </div>

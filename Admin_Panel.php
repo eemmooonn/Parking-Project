@@ -4,6 +4,7 @@
   {
     header("location:Admin_Panel_Login.php");
   }
+  include 'connect.php';
 ?>
 
 
@@ -85,28 +86,42 @@
       <div class="dash-content">
         <div class="overview">
           <div class="title">
+            <i class="uil uil-estate"></i>
             <span class="text">Dashboard</span>
           </div>
 
           <div class="boxes">
+
             <div class="box box1">
-              <i class="uil uil-thumbs-up"></i>
-              <span class="text">Total Likes</span>
-              <span class="number">50,120</span>
+              <i class="uil uil-map-marker-info"></i>
+              <span class="text">Total Sub-Admin</span>
+
+              <?php
+                $sql="SELECT * FROM `subadmin_list`";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_num_rows($result);
+              ?>
+              <span class="number"><?php echo ''.$row.''?></span>
             </div>
+
             <div class="box box2">
-              <i class="uil uil-comments"></i>
-              <span class="text">Comments</span>
-              <span class="number">20,120</span>
+              <i class="uil uil-users-alt"></i>
+              <span class="text">Total User</span>
+              <?php
+                $sql="SELECT * FROM `user_list`";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_num_rows($result);
+              ?>
+              <span class="number"><?php echo ''.$row.''?></span> 
             </div>
             <div class="box box3">
-              <i class="uil uil-share"></i>
-              <span class="text">Total Share</span>
-              <span class="number">10,120</span>
+              <i class="uil uil-coins"></i>
+              <span class="text">Total Earning</span>
+              <span class="number">1,47,550 TK</span>
             </div>
           </div>
         </div>
-
+      
         <div class="activity">
           <div class="title">
             <i class="uil uil-clock-three"></i>
@@ -166,6 +181,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </section>
   </body>
@@ -177,4 +193,5 @@
     session_destroy();
     header("location:Admin_Panel_Login.php");
   }
+
 ?>
