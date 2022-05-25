@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="login_register.css" />
+    <link rel="stylesheet" href="../login_register.css" />
     <!-- Fontawesome CDN Link -->
     <link
       rel="stylesheet"
@@ -13,19 +13,19 @@
   <body>
     <div class="container">
       <nav id="navBar">
-        <a href="index.html"><img src="images/logo.png" class="logo" /></a>
+        <a href="../index.html"><img src="../images/logo.png" class="logo" /></a>
       </nav>
       <input type="checkbox" id="flip" />
       <div class="cover">
         <div class="front">
-          <img src="images/frontImg.jpg" alt="" />
+          <img src="../images/SubAdminLogin.jpg" alt="" />
         </div>
       </div>
       <div class="forms">
         <div class="form-content">
           <div class="signup-form">
             <div class="title">Register</div>
-            <form action="insert_user.php" method="POST">
+            <form action="insert_subAdmin.php" method="POST">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-user"></i>
@@ -75,7 +75,7 @@
 
                 <div class="text sign-up-text">
                   Already have an account?
-                  <a href="user_login.html">Login now</a>
+                  <a href="SubAdminLogin.php">Login now</a>
                 </div>
               </div>
             </form>

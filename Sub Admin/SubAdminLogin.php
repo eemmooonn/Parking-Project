@@ -1,11 +1,12 @@
 <?php 
-  require("connect.php");
+  require("../connect.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="login_register.css" />
+    <link rel="stylesheet" href="../login_register.css" />
     <!-- Fontawesome CDN Link -->
     <link
       rel="stylesheet"
@@ -16,12 +17,12 @@
   <body>
     <div class="container">
       <nav id="navBar">
-        <a href="index.html"><img src="images/logo.png" class="logo" /></a>
+        <a href="../index.html"><img src="../images/logo.png" class="logo" /></a>
       </nav>
       <input type="checkbox" id="flip" />
       <div class="cover">
         <div class="front">
-          <img src="images/frontImg.jpg" alt="" />
+          <img src="../images/SubAdminLogin.jpg" alt="" />
         </div>
       </div>
       <div class="forms">
@@ -32,7 +33,7 @@
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" name="email"placeholder="Enter your email" required />
+                  <input type="text" name="email" placeholder="Enter your email" required />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
@@ -53,7 +54,7 @@
                 </div>
                 <div class="text sign-up-text">
                   Don't have an account?
-                  <a href="user_register.html">Register now</a>
+                  <a href="SubAdminRegister.php">Register now</a>
                 </div>
               </div>
             </form>
@@ -63,6 +64,7 @@
     </div>
   </body>
 </html>
+
 <?php
 
 if(isset($_POST['login']))
@@ -73,7 +75,7 @@ if(isset($_POST['login']))
   {
     session_start();
     $_SESSION['AdminLoginEmail']=$_POST['email'];
-    header("location:index.html");
+    header("location:SubAdmin.php");
   }
   else {
     echo "<script>alert('Incorrect Email or Password!') </script>";
