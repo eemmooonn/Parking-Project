@@ -28,7 +28,7 @@
       <a class="AdminHome"href="Admin_Panel.php">
         <div class="logo-name" >
           <div class="logo-image">
-            <img src="../images/logo_dark.png"/>
+            <img src="../images/logo_dark.png" alt="Logo"/>
           </div>
           <span class="logo_name" >ParkOnline</span>
         </div>
@@ -82,7 +82,7 @@
           
         <div>
           <span class="admin_name"><?php echo $_SESSION['AdminLoginName']?></span>
-          <img src="../images/profile.png" alt="" />
+          <img src="../images/profile.png" alt="Profile Pic" />
         </div>
         
       </div>
