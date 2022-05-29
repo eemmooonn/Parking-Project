@@ -74,7 +74,7 @@ if(isset($_POST['login']))
   if (mysqli_num_rows($result)==1)
   {
     session_start();
-    $_SESSION['AdminLoginEmail']=$_POST['email'];
+    $_SESSION['SubAdminLoginEmail']=$_POST['email'];
     header("location:SubAdmin.php");
   }
   else {

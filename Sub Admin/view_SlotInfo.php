@@ -4,6 +4,17 @@ if (!isset($_SESSION['SubAdminLoginEmail'])) {
   header("location:SubAdminLogin.php");
 }
 include '../connect.php';
+
+//Fetching Subadmin Information
+$SearchText = $_SESSION['SubAdminLoginEmail'];
+$sql_search = "SELECT * FROM `subadmin_list` WHERE email='$SearchText'";
+$SearchResult = mysqli_query($con, $sql_search);
+$row = mysqli_fetch_assoc($SearchResult);
+$id = $row['id'];
+$name = $row["name"];
+$phone = $row["phone"];
+$email = $row["email"];
+$password = $row["password"];
 ?>
 
 
@@ -80,9 +91,8 @@ include '../connect.php';
 
   <section class="dashboard">
     <div class="top">
-      <a href="ParkingPlaceForm.php">
+      <a href="">
         <div class="Add-Parking">
-          <button type="submit" class="Add-Parking" name="AddParkingBtn">Add Parking Place</button>
         </div>
       </a>
 
@@ -97,36 +107,67 @@ include '../connect.php';
       <div class="overview">
         <a href="SubAdmin.php">
           <div class="title">
-            <i class="uil uil-car-sideview"></i>
-            <span class="text">Dahsboard</span>
+            <i class="uil uil-arrows-shrink-h"></i>
+            <span class="text">Slot Information</span>
           </div>
         </a>
-        <div class="boxes">
-
-          <div class="box box1">
-            
-          </div>
-
-          <div class="box box2">
-            
-          </div>
-          <div class="box box3">
-            
-          </div>
-        </div>
+        
       </div>
-
       <div class="activity">
-        <div class="title">
-          <i class="uil uil-clock-three"></i>
-          <span class="text">Recent Activity</span>
-        </div>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Slot No.</th>
+                            <th scope="col">Slot Size</th>
+                            <th scope="col">Slot Status</th>
+                        </tr>
 
-        <div class="activity-data">
+                            
+                    </thead>
+                    <tbody>
+                    <?php
+                        $subadminid = $id;
+                        $slotSearch = "SELECT * FROM `slotlist_subid:$subadminid`";
+                        $SlotSearchResult = mysqli_query($con, $slotSearch);
+                        if (mysqli_num_rows($SlotSearchResult) > 0) 
+                        {
+                            while ($row = mysqli_fetch_assoc($SlotSearchResult)) 
+                            {
+                                    $slotNumber = $row['Slot_Id'];
+                                    $slotsize = $row["Slot_Size"];
+                                    $slotstatus = $row["Slot_Status"];
+                                    
 
-        </div>
 
-      </div>
+                                echo '
+                                <tr>
+
+                                    <td>' . $slotNumber . '</td>
+                                    <td>' . $slotsize . '</td>
+                                    <td>' . $slotstatus . '</td>
+
+
+                                </tr>';
+                            }
+                        } 
+                        else 
+                        {
+                            echo '
+                            <tr>
+                                <td colspan="5">No Parking Slot Found</td>
+                            </tr>';
+                        }
+                        
+
+                    ?>
+                    </tbody>
+                </table>
+                <div class="activity-data">
+
+                </div>
+
+
+            </div>
 
     </div>
   </section>

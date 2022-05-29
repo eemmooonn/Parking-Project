@@ -280,21 +280,21 @@ nav.close ~ .dashboard .top{
     transform: translateY(-50%);
     color: var(--black-light-color);
 }
-.top .search-box button{
+.top .Add-Parking button{
     position: absolute;
     height: 100%;
-    padding: 0 25px;
+    padding: 0px 25px;
     outline: none;
     border-style: solid;
     border-color: white;
     background: #1e3e94;
     color: white;
-    border-radius: 50px;
+    border-radius:20px;
     margin-left: 10px;
     cursor: pointer;
     font-size: 14px;
 }
-.top .search-box button:hover{
+.top .Add-Parking button:hover{
     background: #163077;
 }
 .top img{
