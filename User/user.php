@@ -27,7 +27,7 @@
           </li>
           <li><a href="#">Help</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Your Profile</a></li>
+          <li><a href="user_profile.php">Your Profile</a></li>
         </ul>
 
         <ul class="login-register">
