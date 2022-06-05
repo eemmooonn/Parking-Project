@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <nav id="navBar">
-        <a href="index.html"><img src="../images/logo.png" class="logo" /></a>
+        <a href="../index.html"><img src="../images/logo.png" class="logo" /></a>
       </nav>
       <input type="checkbox" id="flip" />
       <div class="cover">
@@ -72,8 +72,8 @@ if(isset($_POST['login']))
   if (mysqli_num_rows($result)==1)
   {
     session_start();
-    $_SESSION['AdminLoginEmail']=$_POST['email'];
-    header("location:../index.html");
+    $_SESSION['UserLoginEmail']=$_POST['email'];
+    header("location:user.php");
   }
   else {
     echo "<script>alert('Incorrect Email or Password!') </script>";
