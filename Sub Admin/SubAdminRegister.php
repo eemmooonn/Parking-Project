@@ -49,7 +49,7 @@
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="Enter your email"
                     required
