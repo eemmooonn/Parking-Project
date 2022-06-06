@@ -107,6 +107,8 @@
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Vehicle No</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Operations</th>
                     </tr>
                 </thead>
@@ -126,6 +128,8 @@
                                 $phone = $row["phone"];
                                 $email = $row["email"];
                                 $password = $row["password"];
+                                $vehicleNo = $row["vehicleNO"];
+                                $image = $row["image"];
 
                                 echo'
                                 <tr>
@@ -134,6 +138,13 @@
                                     <td>'.$phone.'</td>
                                     <td>'.$email.'</td>
                                     <td>'.$password.'</td>
+                                    <td>'.$vehicleNo.'</td>
+                                    
+
+                                    <td>
+                                    <button><a href="user_image.php? userid='.$id.'">View</a>
+                                    </button>
+                                    </td>
 
                                     <td>
                                     <button><a href="UserDelete.php? deleteid='.$id.'">Delete</a>
@@ -165,6 +176,8 @@
                                 $phone = $row["phone"];
                                 $email = $row["email"];
                                 $password = $row["password"];
+                                $vehicleNo = $row["vehicleNo"];
+                                $image = $row["image"];
 
                                 echo'
                                 <tr>
@@ -173,6 +186,12 @@
                                     <td>'.$phone.'</td>
                                     <td>'.$email.'</td>
                                     <td>'.$password.'</td>
+                                    <td>'.$vehicleNo.'</td>
+
+                                    <td>
+                                    <button><a href="user_image.php? userid='.$id.'">View</a>
+                                    </button>
+                                    </td>
 
                                     <td>
                                     <button><a href="UserDelete.php? deleteid='.$id.'">Delete</a>

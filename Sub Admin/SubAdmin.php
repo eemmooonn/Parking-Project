@@ -31,7 +31,8 @@ include '../connect.php';
         <div class="logo-image">
           <img src="../images/logo_dark.png" />
         </div>
-        <span class="logo_name">ParkOnline</span>
+        <span class="logo_name">Sub-Admin</span>
+        
       </div>
     </a>
 
@@ -85,8 +86,8 @@ include '../connect.php';
           <button type="submit" class="Add-Parking" name="AddParkingBtn">Add Parking Place</button>
         </div>
       </a>
-
       <div>
+        
         <span class="admin_name"><?php echo $_SESSION['SubAdminLoginEmail'] ?></span>
         <img src="../images/profile.png" alt="" />
       </div>

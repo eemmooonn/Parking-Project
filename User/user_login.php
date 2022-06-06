@@ -67,7 +67,7 @@
 
 if(isset($_POST['login']))
 {
-  $query="SELECT * FROM `subadmin_list` WHERE email='$_POST[email]' AND password='$_POST[password]'";
+  $query="SELECT * FROM `user_list` WHERE email='$_POST[email]' AND password='$_POST[password]'";
   $result=mysqli_query($con,$query);
   if (mysqli_num_rows($result)==1)
   {
