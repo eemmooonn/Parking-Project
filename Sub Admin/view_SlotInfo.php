@@ -45,8 +45,7 @@ $password = $row["password"];
         <span class="logo_name">Sub-Admin</span>
       </div>
     </a>
-
-
+   
     <div class="menu-items">
       <ul class="nav-links">
         <li>
