@@ -130,6 +130,7 @@ $password = $row["password"];
                             <th scope="col">Small Slot</th>
                             <th scope="col">Medium Slot</th>
                             <th scope="col">Large Slot</th>
+                            <th scope="col">Delete Place</th>
 
                         </tr>
 
@@ -171,7 +172,12 @@ $password = $row["password"];
                                     <td>' . $guardnumber . '</td>
                                     <td>' . $smallslot . '</td>
                                     <td>' . $mediumslot . '</td>
-                                    <td>' . $largeslot . '</td>  
+                                    <td>' . $largeslot . '</td>
+
+                                    <td>
+                                    <button><a href="ParkingDelete.php? deleteid=' . $id . '">Delete</a>
+                                    </button>
+                                    </td> 
 
                                 </tr>';
                                 }

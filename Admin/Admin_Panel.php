@@ -30,7 +30,7 @@
           <div class="logo-image">
             <img src="../images/logo_dark.png" alt="Logo"/>
           </div>
-          <span class="logo_name" >ParkOnline</span>
+          <span class="logo_name" >Admin-Panel</span>
         </div>
       </a>
       
@@ -96,34 +96,45 @@
               </div>
             </a>
           <div class="boxes">
+            <a class="box box1" href="view_SubAdminList.php">
 
-            <div class="box box1">
-              <i class="uil uil-map-marker-info"></i>
-              <span class="text">Total Sub-Admin</span>
+              <div class="box box1">
+                <i class="uil uil-map-marker-info"></i>
+                <span class="text">Total Sub-Admin</span>
+  
+                <?php
+                  $sql="SELECT * FROM `subadmin_list`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_num_rows($result);
+                ?>
+                <span class="number"><?php echo ''.$row.''?></span>
+              </div>
 
-              <?php
-                $sql="SELECT * FROM `subadmin_list`";
-                $result=mysqli_query($con,$sql);
-                $row = mysqli_num_rows($result);
-              ?>
-              <span class="number"><?php echo ''.$row.''?></span>
-            </div>
+            </a>
 
-            <div class="box box2">
-              <i class="uil uil-users-alt"></i>
-              <span class="text">Total User</span>
-              <?php
-                $sql="SELECT * FROM `user_list`";
-                $result=mysqli_query($con,$sql);
-                $row = mysqli_num_rows($result);
-              ?>
-              <span class="number"><?php echo ''.$row.''?></span> 
-            </div>
-            <div class="box box3">
-              <i class="uil uil-coins"></i>
-              <span class="text">Total Earning</span>
-              <span class="number">14,550 TK</span>
-            </div>
+            <a class="box box2" href="view_UserList.php">
+              
+              <div class="box box2">
+                <i class="uil uil-users-alt"></i>
+                <span class="text">Total User</span>
+                <?php
+                  $sql="SELECT * FROM `user_list`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_num_rows($result);
+                ?>
+                <span class="number"><?php echo ''.$row.''?></span> 
+              </div>
+            </a>
+
+            <a class="box box3" href=>
+              <div class="box box3">
+                <i class="uil uil-coins"></i>
+                <span class="text">Total Earning</span>
+                <span class="number">14,550TK</span>
+              </div>
+
+            </a>
+
           </div>
         </div>
       

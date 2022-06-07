@@ -30,7 +30,7 @@
           <div class="logo-image">
             <img src="../images/logo_dark.png"/>
           </div>
-          <span class="logo_name" >ParkOnline</span>
+          <span class="logo_name" >Admin-Panel</span>
         </div>
       </a>
       

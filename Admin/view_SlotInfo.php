@@ -104,6 +104,7 @@ include '../connect.php';
                             <th scope="col">Slot No.</th>
                             <th scope="col">Sub-Admin ID</th>
                             <th scope="col">Slot Size</th>
+                            <th scope="col">Slot Price/Hour</th>
                             <th scope="col">Slot Status</th>
 
                         </tr>
@@ -121,6 +122,7 @@ include '../connect.php';
                                     $slotNumber = $row['Slot_Id'];
                                     $subadminid = $row['Sub_Admin_Id'];
                                     $slotsize = $row["Slot_Size"];
+                                    $priceperhour = $row["PricePerHour"];
                                     $slotstatus = $row["Slot_Status"];
                                     
 
@@ -131,6 +133,7 @@ include '../connect.php';
                                     <td>' . $slotNumber . '</td>
                                     <td>' . $subadminid . '</td>
                                     <td>' . $slotsize . '</td>
+                                    <td>' . $priceperhour . '</td>
                                     <td>' . $slotstatus . '</td>
                                     
 

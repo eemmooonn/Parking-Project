@@ -36,28 +36,37 @@ if (isset($_POST['submit'])) {
   $parkingplace = $_POST["parkingplace"];
   $guardnumber = $_POST["guardnumber"];
 
-  if ($_POST["smallslot"]=="") {
+  if ($_POST["smallslot"]=="" || $_POST["smallslotprice"]=="") 
+  {
     $smallslot = 0;
+    $smallslotprice = 0;
   }
   else
   {
     $smallslot = $_POST["smallslot"];
+    $smallslotprice = $_POST["smallslotprice"];
   }
 
-  if ($_POST["mediumslot"]=="") {
+  if ($_POST["mediumslot"]=="" || $_POST["mediumslotprice"]=="") 
+  {
     $mediumslot = 0;
+    $mediumslotprice = 0;
   }
   else
   {
     $mediumslot = $_POST["mediumslot"];
+    $mediumslotprice = $_POST["mediumslotprice"];
   }
 
-  if ($_POST["largeslot"]=="") {
+  if ($_POST["largeslot"]=="" || $_POST["largeslotprice"]=="") 
+  {
     $largeslot = 0;
+    $largeslotprice = 0;
   }
   else
   {
     $largeslot = $_POST["largeslot"];
+    $largeslotprice = $_POST["largeslotprice"];
   }
 
   
@@ -71,27 +80,28 @@ if (isset($_POST['submit'])) {
                           `Slot_Id` INT(11) NOT NULL AUTO_INCREMENT ,
                           `Sub_Admin_Id` INT(11) NOT NULL ,
                           `Slot_Size` VARCHAR(20) NOT NULL ,
+                          `PricePerHour` INT(20) NOT NULL ,
                           `Slot_Status` VARCHAR(20) NOT NULL ,
                           PRIMARY KEY  (`Slot_Id`))";
   $tableCreateRun = mysqli_query($con, $tableCreate);
 
   //Inserting small slot in the slot table
-  $smallInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, Slot_Status)   
-    values('$subadminid', 'Small', 'Not Connected' )  ";
+  $smallInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status)   
+    values('$subadminid', 'Small','$smallslotprice', 'Not Connected')  ";
   while($smallslot != 0) {
     $SmallSlotRun = mysqli_query($con, $smallInsert);
     $smallslot--;
   } 
   //Inserting medium slot in the slot table
-  $mediumInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, Slot_Status)   
-    values('$subadminid', 'Medium', 'Not Connected')  ";
+  $mediumInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size,  PricePerHour, Slot_Status)   
+    values('$subadminid', 'Medium', '$mediumslotprice', 'Not Connected')  ";
   while($mediumslot != 0) {
     $MediumSlotRun = mysqli_query($con, $mediumInsert);
     $mediumslot--;
   } 
   //Inserting large slot in the slot table
-  $largeInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, Slot_Status)   
-    values('$subadminid', 'Large', 'Not Connected')  ";
+  $largeInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status)   
+    values('$subadminid', 'Large', '$largeslotprice', 'Not Connected')  ";
   while($largeslot != 0) {
     $LargeSlotRun = mysqli_query($con, $largeInsert);
     $largeslot--;
@@ -250,12 +260,12 @@ if (isset($_POST['submit'])) {
               </select>
             </div>
             <div class="input-field">
-              <label for="">Security Guard Number(if available):</label>
-              <input type="number" name="guardnumber" id="" value="" class="form-control" placeholder="Enter security guard number" />
+              <label for="">Security Guard Number:</label>
+              <input type="number" name="guardnumber" id="" value="" class="form-control" placeholder="Enter security guard number" required/>
             </div>
             
           </div>
-          <header>Please Enter The Parking Slot Sizes</header>
+          <header>Please Enter The Parking Slot Size and Price</header>
 
           <div class="fields">
               <div class="input-field">
@@ -263,12 +273,24 @@ if (isset($_POST['submit'])) {
                 <input type="number" name="smallslot" value="" id="" class="form-control" placeholder="Enter total small size slot"/>
               </div>
               <div class="input-field">
+                <label for="">Small Slot Price Per Hour:</label>
+                <input type="number" name="smallslotprice" value="" id="" class="form-control" placeholder="Enter small slot price"/>
+              </div>
+              <div class="input-field">
                 <label for="">Medium(For medium size vehicle like "Car"):</label>
                 <input type="number" name="mediumslot" value="" id="" class="form-control" placeholder="Enter total medium size slot"/>
               </div>
               <div class="input-field">
+                <label for="">Medium Slot Price Per Hour:</label>
+                <input type="number" name="mediumslotprice" value="" id="" class="form-control" placeholder="Enter medium slot price"/>
+              </div>
+              <div class="input-field">
                 <label for="">Large(For large size vehicle like "Microbus"):</label>
                 <input type="number" name="largeslot" value="" id="" class="form-control" placeholder="Enter total large size slot"/>
+              </div>
+              <div class="input-field">
+                <label for="">Large Slot Price Per Hour:</label>
+                <input type="number" name="largeslotprice" value="" id="" class="form-control" placeholder="Enter large slot price"/>
               </div>
 
           </div>

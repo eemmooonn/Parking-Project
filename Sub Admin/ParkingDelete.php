@@ -11,7 +11,7 @@ if(isset($_GET['deleteid'])){
     
     if($resultPlace && $resultSlotTable){
        // echo "Deleted successfully";
-     header('location:view_ParkingPalaceInfo.php');
+     header('location:view_ParkingInfo.php');
     }else{
         die(mysqli_error($con));
     }
