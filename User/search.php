@@ -11,7 +11,7 @@ if(mysqli_num_rows($result)>0){
 		          <td>".$row['fulladdress']."  </td>
 		          <td>Ward No: ".$row['ward']."  </td>
                   <td>
-                    <button><a href='user.php? placeid=" . $id . "'>View</a></button>
+                    <button><a href='parking_status.php?placeid=" . $id . "'>View</a></button>
                   </td>
 		        </tr>";
 	}

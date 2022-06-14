@@ -27,8 +27,43 @@
     font-size: 1.1em;
     width: 100%;
     text-align: center;
-    
-}
+  }
+  .styled-table-location{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .styled-table-location thead tr {
+      background-color: #ffffff;
+      color: black;
+      text-align: left;
+  }
+  .styled-table-location th,
+  .styled-table-location td {
+      padding: 12px 15px;
+      background-color: white;
+  }
+  .styled-table-location tbody tr {
+      border-bottom: 1px solid #dddddd;
+  }
+
+  .styled-table-location tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+  }
+
+  .parking_status{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+  }
+  .heading{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+  }
 
   
   .nav-links li {

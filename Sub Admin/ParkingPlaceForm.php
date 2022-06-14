@@ -245,7 +245,7 @@ if (isset($_POST['submit'])) {
                 <option disabled selected>Select facilities</option>
                 <option>CCTV</option>
                 <option>Guard</option>
-                <option>Both(CCTV+Guard)</option>
+                <option>CCTV+Guard</option>
                 <option>No Facility</option>
               </select>
             </div>
