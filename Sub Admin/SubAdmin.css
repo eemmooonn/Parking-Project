@@ -52,6 +52,11 @@ body.dark::-webkit-scrollbar-thumb:hover,
 body.dark .activity-data::-webkit-scrollbar-thumb:hover{
     background: #3A3B3C;
 }
+a 
+{
+    text-decoration: none;
+
+}
 
 nav{
     position: fixed;

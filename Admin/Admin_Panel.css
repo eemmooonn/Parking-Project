@@ -64,6 +64,11 @@ nav{
     border-right: 1px solid var(--border-color);
     transition: var(--tran-05);
 }
+a 
+{
+    text-decoration: none;
+
+}
 .admin_name{
     font-size: 15px;
 }
