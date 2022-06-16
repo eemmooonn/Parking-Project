@@ -1,7 +1,7 @@
 <?php
 
 include '../connect.php';
-$sql = "SELECT * FROM parkingplace WHERE thana LIKE '%".$_POST['location']."%'";
+$sql = "SELECT * FROM parkingplace WHERE thana LIKE '%".$_POST['location']."%' OR fulladdress LIKE '%".$_POST['location']."%'";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result)>0){
 	while ($row=mysqli_fetch_assoc($result)) {
