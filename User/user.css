@@ -18,6 +18,14 @@
     justify-content: space-between;
     padding: 20px 7%;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    color: red;
+
+  }
   .logo {
     width: 85px;
     cursor: pointer;

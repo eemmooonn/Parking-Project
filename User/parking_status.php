@@ -131,18 +131,30 @@ if (isset($_GET['placeid']))
                                     
 
 
-                                    echo '
-                                <tr>
+                              echo '<tr>
+                                
 
-                                    <td>' . $slotNumber . '</td>
+                                   <td>' . $slotNumber . '</td>
                                     <td>' . $slotsize . '</td>
                                     <td>' . $priceperhour . '</td>
-                                    <td>' . $slotstatus . '</td> 
-                                    <td>
-                                        <button><a href="user_profile.php?placeid=' . $placeid . '&slotNumber=' . $slotNumber . '&priceperhour='.$priceperhour.'">Book</a></button>
-                                    </td>
+                                    <td>' . $slotstatus . '</td> ';
+                                   if ($slotstatus=="Booked") 
+                                   {
+                                        echo' 
+                                        <td>
+                                        <button disabled>Book</button>
+                                        </td>';
+                                   }
+                                   else
+                                   {
+                                        echo'
+                                        <td>
+                                          <button><a href="user_profile.php?placeid=' . $placeid . '&slotNumber=' . $slotNumber . '&priceperhour='.$priceperhour.'">Book</a></button>
+                                        </td> ';
+                                   } 
+                                    
 
-                                </tr>';
+                              echo'</tr>';
                                 }
                             } 
                             else 
@@ -153,9 +165,6 @@ if (isset($_GET['placeid']))
                             </tr>
                             ';
                             }
-
-                        
-
                     ?>
                     </tbody>
             </table>
