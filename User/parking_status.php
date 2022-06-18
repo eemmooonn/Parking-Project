@@ -149,8 +149,16 @@ if (isset($_GET['placeid']))
                                    {
                                         echo'
                                         <td>
-                                          <button><a href="user_profile.php?placeid=' . $placeid . '&slotNumber=' . $slotNumber . '&priceperhour='.$priceperhour.'">Book</a></button>
-                                        </td> ';
+
+                                          <form action="slot_booking.php" method="post">
+                                            <input name="placeid" type="hidden" value="'.$placeid.'">  
+                                            <input name="slotNumber" type="hidden" value="'.$slotNumber.'">  
+                                            <input name="priceperhour" type="hidden" value="'.$priceperhour.'">  
+                                            <button type="book">Book</button>
+                                          </form>
+
+                                        </td>
+                                        ';
                                    } 
                                     
 
@@ -169,6 +177,7 @@ if (isset($_GET['placeid']))
                     </tbody>
             </table>
         </div>
+
       
 
       <div class="popup" id="popup">
