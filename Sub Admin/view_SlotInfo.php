@@ -67,9 +67,15 @@ $password = $row["password"];
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="view_parkingRequest.php">
             <i class="uil uil-car-sideview"></i>
-            <span class="link-name">Parking Status</span>
+            <span class="link-name">Parking Request</span>
+          </a>
+        </li>
+        <li>
+          <a href="view_bookingInfo.php">
+            <i class="uil uil-car"></i>
+            <span class="link-name">Booked Slot Info</span>
           </a>
         </li>
 

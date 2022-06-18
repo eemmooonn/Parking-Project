@@ -69,7 +69,8 @@ if (isset($_POST['submit'])) {
     $largeslotprice = $_POST["largeslotprice"];
   }
 
-  
+  $sqlBalance="INSERT INTO balance (sub_id, current_balance) values('$subadminid','0')";
+  $sqlBalanceResult=mysqli_query($con, $sqlBalance);
   
   $sql = "INSERT INTO `parkingplace` (id, email, division, thana, ward, fulladdress, opentime, closetime, parkingcategory, facility, parkingplace, guardnumber, smallslot, mediumslot, largeslot)   
     values('$subadminid', '$subadminemail', '$division', '$thana', '$ward', '$fulladdress', '$opentime', '$closetime', '$parkingcategory', '$facility', '$parkingplace', '$guardnumber', '$smallslot', '$mediumslot', '$largeslot' ) ";
