@@ -4,6 +4,11 @@ if (!isset($_SESSION['SubAdminLoginEmail'])) {
   header("location:SubAdminLogin.php");
 }
 include '../connect.php';
+$SearchText = $_SESSION['SubAdminLoginEmail'];
+$sql_search = "SELECT * FROM `subadmin_list` WHERE email='$SearchText'";
+$SearchResult = mysqli_query($con, $sql_search);
+$row = mysqli_fetch_assoc($SearchResult);
+$id = $row['id'];
 ?>
 
 
@@ -58,9 +63,15 @@ include '../connect.php';
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="view_parkingRequest.php">
             <i class="uil uil-car-sideview"></i>
-            <span class="link-name">Parking Status</span>
+            <span class="link-name">Parking Request</span>
+          </a>
+        </li>
+        <li>
+          <a href="view_bookingInfo.php">
+            <i class="uil uil-car"></i>
+            <span class="link-name">Booked Slot Info</span>
           </a>
         </li>
 
@@ -104,16 +115,48 @@ include '../connect.php';
         </a>
         <div class="boxes">
 
-          <div class="box box1">
-            
-          </div>
+          <a class="box box1" href="view_parkingRequest.php">
+            <div class="box box1">
+              <i class="uil uil-car-sideview"></i>
+              <span class="text">Request Pending</span>
 
-          <div class="box box2">
-            
-          </div>
-          <div class="box box3">
-            
-          </div>
+              <?php
+                $sql="SELECT * FROM `booking_request` WHERE place_id=$id";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_num_rows($result);
+              ?>
+              <span class="number"><?php echo ''.$row.''?></span>
+            </div>
+          </a>
+
+          <a class="box box2" href="view_bookingInfo.php">
+            <div class="box box2">
+              <i class="uil uil-car"></i>
+              <span class="text">Booked Slot</span>
+
+              <?php
+                $sql="SELECT * FROM `booked_list` WHERE place_id=$id";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_num_rows($result);
+              ?>
+              <span class="number"><?php echo ''.$row.''?></span>
+            </div>
+          </a>
+          <a class="box box3">
+            <div class="box box3">
+              <i class="uil uil-coins"></i>
+              <span class="text">Balance(TK)</span>
+
+              <?php
+                $sql = "SELECT current_balance FROM `balance` WHERE sub_id=$id";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_fetch_assoc($result);
+                $current_balance = $row['current_balance'];
+              ?>
+              <span class="number"><?php echo ''.$current_balance.''?></span>
+            </div>
+          </a>
+
         </div>
       </div>
 

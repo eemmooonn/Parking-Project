@@ -113,7 +113,8 @@ if (isset($_GET['placeid']))
                             <th scope="col">Slot No.</th>
                             <th scope="col">Slot Size</th>
                             <th scope="col">Price/Hour</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Slot Status</th>
+                            <th scope="col">Booking Status</th>
                             <th scope="col">Book</th>
 
                         </tr>       
@@ -128,6 +129,7 @@ if (isset($_GET['placeid']))
                                     $slotsize = $row["Slot_Size"];
                                     $priceperhour = $row["PricePerHour"];
                                     $slotstatus = $row["Slot_Status"];
+                                    $bookingstatus = $row["Booking_Status"];
                                     
 
 
@@ -137,8 +139,9 @@ if (isset($_GET['placeid']))
                                    <td>' . $slotNumber . '</td>
                                     <td>' . $slotsize . '</td>
                                     <td>' . $priceperhour . '</td>
-                                    <td>' . $slotstatus . '</td> ';
-                                   if ($slotstatus=="Booked") 
+                                    <td>' . $slotstatus . '</td> 
+                                    <td>' . $bookingstatus . '</td> ';
+                                   if ($bookingstatus=="Booked") 
                                    {
                                         echo' 
                                         <td>

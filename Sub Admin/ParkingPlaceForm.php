@@ -9,7 +9,7 @@ include '../connect.php';
 
 <?php
 //Getting Subadmin data
-
+//
 $SearchText = $_SESSION['SubAdminLoginEmail'];
 $sql_search = "SELECT * FROM `subadmin_list` WHERE email='$SearchText'";
 $SearchResult = mysqli_query($con, $sql_search);
@@ -69,7 +69,8 @@ if (isset($_POST['submit'])) {
     $largeslotprice = $_POST["largeslotprice"];
   }
 
-  
+  $sqlBalance="INSERT INTO balance (sub_id, current_balance) values('$subadminid','0')";
+  $sqlBalanceResult=mysqli_query($con, $sqlBalance);
   
   $sql = "INSERT INTO `parkingplace` (id, email, division, thana, ward, fulladdress, opentime, closetime, parkingcategory, facility, parkingplace, guardnumber, smallslot, mediumslot, largeslot)   
     values('$subadminid', '$subadminemail', '$division', '$thana', '$ward', '$fulladdress', '$opentime', '$closetime', '$parkingcategory', '$facility', '$parkingplace', '$guardnumber', '$smallslot', '$mediumslot', '$largeslot' ) ";
@@ -82,26 +83,27 @@ if (isset($_POST['submit'])) {
                           `Slot_Size` VARCHAR(20) NOT NULL ,
                           `PricePerHour` INT(20) NOT NULL ,
                           `Slot_Status` VARCHAR(20) NOT NULL ,
+                          `Booking_Status` VARCHAR(20) NOT NULL ,
                           PRIMARY KEY  (`Slot_Id`))";
   $tableCreateRun = mysqli_query($con, $tableCreate);
 
   //Inserting small slot in the slot table
-  $smallInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status)   
-    values('$subadminid', 'Small','$smallslotprice', 'Not Connected')  ";
+  $smallInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status, Booking_Status)   
+    values('$subadminid', 'Small','$smallslotprice', 'Not Connected', 'Available')  ";
   while($smallslot != 0) {
     $SmallSlotRun = mysqli_query($con, $smallInsert);
     $smallslot--;
   } 
   //Inserting medium slot in the slot table
-  $mediumInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size,  PricePerHour, Slot_Status)   
-    values('$subadminid', 'Medium', '$mediumslotprice', 'Not Connected')  ";
+  $mediumInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size,  PricePerHour, Slot_Status, Booking_Status)   
+    values('$subadminid', 'Medium', '$mediumslotprice', 'Not Connected', 'Available')  ";
   while($mediumslot != 0) {
     $MediumSlotRun = mysqli_query($con, $mediumInsert);
     $mediumslot--;
   } 
   //Inserting large slot in the slot table
-  $largeInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status)   
-    values('$subadminid', 'Large', '$largeslotprice', 'Not Connected')  ";
+  $largeInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status, Booking_Status)   
+    values('$subadminid', 'Large', '$largeslotprice', 'Not Connected', 'Available')  ";
   while($largeslot != 0) {
     $LargeSlotRun = mysqli_query($con, $largeInsert);
     $largeslot--;

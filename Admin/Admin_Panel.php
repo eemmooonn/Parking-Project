@@ -126,13 +126,19 @@
               </div>
             </a>
 
-            <a class="box box3" href=>
+            <a class="box box3">
               <div class="box box3">
                 <i class="uil uil-coins"></i>
-                <span class="text">Total Earning</span>
-                <span class="number">14,550TK</span>
-              </div>
+                <span class="text">Total Transaction(TK)</span>
 
+                <?php
+                  $sql = "SELECT SUM(current_balance) FROM `balance`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_fetch_assoc($result);
+                  $current_balance = $row['SUM(current_balance)'];
+                ?>
+                <span class="number"><?php echo ''.$current_balance.''?></span>
+              </div>
             </a>
 
           </div>
