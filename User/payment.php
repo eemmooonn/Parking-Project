@@ -87,6 +87,18 @@ if(isset($_POST['confirm']))
             now() ) ";
     
     $insert = mysqli_query($con, $sql);
+    if($insert)
+    {
+      echo "<script>alert('Your booking is received. You will be notified very soon!') </script>";
+      header("location:user.php");
+    }
+    else
+    {
+      echo "<script>alert('Please submit everything correctly!') </script>";
+    }
+
+    
+    
 }
 
 ?>
