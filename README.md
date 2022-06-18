@@ -1,3 +1,2 @@
-# Parking-Project
+# Online Smart Parking Management System
 
-Online Smart Parking Management System
