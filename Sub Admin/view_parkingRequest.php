@@ -220,10 +220,7 @@ if(isset($_POST['remove']))
                                         
                                         <input name="booking_id" type="hidden" value="'.$booking_id.'">
                                         <input name="totalrentcost" type="hidden" value="'.$totalrentcost.'">
-<<<<<<< HEAD
                                         <input name="slot_No" type="hidden" value="'.$slot_No.'">
-=======
->>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
                                         <button name="accept">Accept</button>
                                         <button name="remove">Remove</button>
                                     </form>
