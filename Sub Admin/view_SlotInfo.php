@@ -126,6 +126,7 @@ $password = $row["password"];
                             <th scope="col">Slot Size</th>
                             <th scope="col">Slot Price/Hour</th>
                             <th scope="col">Slot Status</th>
+                            <th scope="col">Booking Status</th>
                         </tr>
 
                             
@@ -143,6 +144,7 @@ $password = $row["password"];
                                     $slotsize = $row["Slot_Size"];
                                     $priceperhour = $row["PricePerHour"];
                                     $slotstatus = $row["Slot_Status"];
+                                    $bookingstatus = $row["Booking_Status"];
                                     
 
 
@@ -153,6 +155,7 @@ $password = $row["password"];
                                     <td>' . $slotsize . '</td>
                                     <td>' . $priceperhour . '</td>
                                     <td>' . $slotstatus . '</td>
+                                    <td>' . $bookingstatus . '</td>
 
 
                                 </tr>';
