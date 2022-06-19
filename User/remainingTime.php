@@ -5,6 +5,34 @@
     header("location:user_login.php");
   }
   include '../connect.php';
+
+$SearchText = $_SESSION['UserLoginEmail'];
+$sql_search = "SELECT * FROM `user_list` WHERE email='$SearchText'";
+$SearchResult = mysqli_query($con, $sql_search);
+$row = mysqli_fetch_assoc($SearchResult);
+$id = $row['id'];
+
+
+
+  if (isset($_REQUEST['booking_id'])) 
+  {
+    //Setting yourBooking page value to Session
+    $_SESSION['booking_id'] = $_REQUEST['booking_id'];
+    
+  }
+?>
+<?php
+$bookingID=$_SESSION['booking_id'];
+$bookedList = "SELECT * FROM `booked_list` WHERE booking_id='$bookingID'";
+$bookedListResult = mysqli_query($con, $bookedList);
+$row = mysqli_fetch_assoc($bookedListResult);
+$placeid = $row['place_id'];
+$arrival_Date = $row['arrival_date'];
+$arrival_Time = $row['arrival_time'];
+$departure_Date = $row['departure_date'];
+$departure_Time = $row['departure_time'];
+$totalParkingHour = $row['totalparkinghour'];
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +42,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="user.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>ParkO | Book Your Parking</title>
   </head>
   <body>
@@ -44,20 +71,33 @@
 
         <img src="../images/menu.png" class="menubar" onclick="togglebtn()" />
       </nav>
+        <h2 class="heading">Remaining Time</h2>
+        <div class="parking_status">  
+            <?php 
+                $newArrival = strtotime($arrival_Date)+ strtotime($arrival_Time);
+                $currentDate= strtotime(date("Y-m-d"));
+                $currentTime= strtotime(time());
 
-      <div class="container">
-        <h1>Book your parking space,<br />before arriving!</h1>
-        <div class="search-bar">
-          <form method="POST">
-            <input type="text" id="search" placeholder="Search Location" />
-          </form>
-          <table class="styled-table">
-            <tbody id="output">
-              
-            </tbody>
-          </table>
+                $diff=$newArrival-($currentDate+$currentTime);
+
+                $remaingMinutes=$diff/60;
+                $remaingHours=$diff/60;
+                $remaingSeconds=$diff%60;
+
+                echo date("Y-m-d h:i:sa", $diff) . "<br>";
+                echo $remaingHours.":".$remaingMinutes.":".$remaingSeconds. "<br>";
+            
+            ?>
+
+            
+        
         </div>
-      </div>
+
+
+        
+        
+
+      
 
       <div class="popup" id="popup">
         <p>
@@ -69,6 +109,7 @@
         <button type="button" onclick="closePopup()">OK</button>
       </div>
     </div>
+    
 
     <script>
       var navBar = document.getElementById("navBar");
@@ -85,22 +126,7 @@
       let popup = document.getElementById("popup");
     </script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#search").keypress(function(){
-      $.ajax({
-        type:'POST',
-        url:'search.php',
-        data:{
-          location:$("#search").val(),
-        },
-        success:function(data){
-          $("#output").html(data);
-        }
-      });
-    });
-  });
-</script>
+
   </body>
 </html>
 

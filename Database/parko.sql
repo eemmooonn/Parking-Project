@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 18, 2022 at 08:41 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jun 19, 2022 at 04:21 PM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.4
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,11 +57,8 @@ CREATE TABLE `balance` (
 --
 
 INSERT INTO `balance` (`sub_id`, `current_balance`) VALUES
-(1, 2200),
-(2, 0),
-(4, 0),
-(6, 0),
-(411, 2100);
+(1, 1710),
+(2, 0);
 
 -- --------------------------------------------------------
 
@@ -94,10 +91,8 @@ CREATE TABLE `booked_list` (
 --
 
 INSERT INTO `booked_list` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(11, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 5, 50, '2022-06-20', '00:20:00', '2022-06-21', '12:20:00', 36, 1800, 'Nagad', 'TAKS812910', '2022-06-18 22:22:49'),
-(12, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 411, 2, 50, '2022-06-20', '08:50:00', '2022-06-21', '20:50:00', 36, 1800, 'bKash', 'TSC1256BN', '2022-06-18 23:51:11'),
-(13, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 411, 6, 100, '2022-06-19', '11:00:00', '2022-06-19', '14:00:00', 3, 300, 'Nagad', 'CV5DHKA4812', '2022-06-18 23:55:20'),
-(14, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 4, 50, '2022-06-20', '14:30:00', '2022-06-20', '22:30:00', 8, 400, 'bKash', 'TK127891JA', '2022-06-19 00:06:14');
+(2, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-19', '13:40:00', '2022-06-20', '06:40:00', 17, 510, 'Rocket', 'fhhk45678', '2022-06-19 13:41:22'),
+(5, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-20', '15:00:00', '2022-06-21', '15:00:00', 24, 1200, 'bKash', '11414qqkle', '2022-06-19 14:00:59');
 
 -- --------------------------------------------------------
 
@@ -130,7 +125,8 @@ CREATE TABLE `booking_request` (
 --
 
 INSERT INTO `booking_request` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(10, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 50, '2022-06-20', '00:20:00', '2022-06-21', '12:20:00', 36, 1800, 'Nagad', '2342342', '2022-06-18 22:22:45');
+(3, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 30, '2022-06-20', '19:42:00', '2022-06-21', '06:46:00', 11, 332, 'Nagad', '2342342', '2022-06-19 13:42:53'),
+(4, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2357', 1, 6, 50, '2022-06-23', '13:44:00', '2022-06-25', '13:49:00', 48, 2404, 'Rocket', '11414qqkle', '2022-06-19 13:45:30');
 
 -- --------------------------------------------------------
 
@@ -161,11 +157,8 @@ CREATE TABLE `parkingplace` (
 --
 
 INSERT INTO `parkingplace` (`id`, `email`, `division`, `thana`, `ward`, `fulladdress`, `opentime`, `closetime`, `parkingcategory`, `facility`, `parkingplace`, `guardnumber`, `smallslot`, `mediumslot`, `largeslot`) VALUES
-(1, 'mazumderemon@gmail.com', 'Dhaka', 'Jatrabari', 23, '26/9, Jatrabari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01913212383', 5, 5, 5),
-(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Paltan', 19, '25/9, Paltan, Dhaka', '07:00', '23:59', 'Market', 'CCTV+Guard', 'Indoor', '01911272188', 5, 10, 5),
-(4, 'tamim@yahoo.com', 'Dhaka', 'Shahali', 20, '25/9, Shahali, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '0162980567', 4, 8, 5),
-(6, 'ferdaushasanemon@gmail.com', 'Dhaka', 'Wari', 25, '25/9, Wari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '019116683190', 10, 20, 5),
-(411, 'ferdaus@gmail.com', 'Dhaka', 'Gulshan', 12, '26/5, Gulshan, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01812538902', 5, 5, 5);
+(1, 'mazumderemon@gmail.com', 'Dhaka', 'Jatrabari', 12, '25/9, Jatrabari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '019113713113', 5, 5, 5),
+(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Motijheel', 34, '24/9, Motijheel, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '0181251731831', 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -198,8 +191,7 @@ CREATE TABLE `removed_bookedlist` (
 --
 
 INSERT INTO `removed_bookedlist` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(7, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 50, '2022-06-19', '20:00:00', '2022-06-20', '21:00:00', 25, 1250, 'bKash', '11414qqkle', '2022-06-18 18:22:47'),
-(9, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 2, 50, '2022-06-20', '00:20:00', '2022-06-21', '12:20:00', 36, 1800, 'bKash', 'JA8482KFRA67', '2022-06-18 22:21:08');
+(1, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-19', '14:30:00', '2022-06-19', '16:40:00', 2, 65, 'bKash', '2148192', '2022-06-19 13:33:23');
 
 -- --------------------------------------------------------
 
@@ -227,13 +219,6 @@ CREATE TABLE `removed_bookingrequest` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `removed_bookingrequest`
---
-
-INSERT INTO `removed_bookingrequest` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(8, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 2, 50, '2022-06-29', '22:00:00', '2022-06-30', '23:00:00', 25, 1250, 'bKash', '3254169JK', '2022-06-18 21:05:01');
-
 -- --------------------------------------------------------
 
 --
@@ -245,29 +230,30 @@ CREATE TABLE `slotlist_subid:1` (
   `Sub_Admin_Id` int(11) NOT NULL,
   `Slot_Size` varchar(20) NOT NULL,
   `PricePerHour` int(20) NOT NULL,
-  `Slot_Status` varchar(20) NOT NULL
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `slotlist_subid:1`
 --
 
-INSERT INTO `slotlist_subid:1` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`) VALUES
-(1, 1, 'Small', 50, 'Booked'),
-(2, 1, 'Small', 50, 'Not Connected'),
-(3, 1, 'Small', 50, 'Available'),
-(4, 1, 'Small', 50, 'Not Connected'),
-(5, 1, 'Small', 50, 'Not Connected'),
-(6, 1, 'Medium', 100, 'Booked'),
-(7, 1, 'Medium', 100, 'Not Connected'),
-(8, 1, 'Medium', 100, 'Not Connected'),
-(9, 1, 'Medium', 100, 'Not Connected'),
-(10, 1, 'Medium', 100, 'Not Connected'),
-(11, 1, 'Large', 150, 'Not Connected'),
-(12, 1, 'Large', 150, 'Not Connected'),
-(13, 1, 'Large', 150, 'Not Connected'),
-(14, 1, 'Large', 150, 'Not Connected'),
-(15, 1, 'Large', 150, 'Not Connected');
+INSERT INTO `slotlist_subid:1` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 1, 'Small', 30, 'Not Connected', 'Booked'),
+(2, 1, 'Small', 30, 'Not Connected', 'Available'),
+(3, 1, 'Small', 30, 'Not Connected', 'Available'),
+(4, 1, 'Small', 30, 'Not Connected', 'Available'),
+(5, 1, 'Small', 30, 'Not Connected', 'Available'),
+(6, 1, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 1, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 1, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 1, 'Medium', 50, 'Not Connected', 'Booked'),
+(10, 1, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 1, 'Large', 80, 'Not Connected', 'Available'),
+(12, 1, 'Large', 80, 'Not Connected', 'Available'),
+(13, 1, 'Large', 80, 'Not Connected', 'Available'),
+(14, 1, 'Large', 80, 'Not Connected', 'Available'),
+(15, 1, 'Large', 80, 'Not Connected', 'Available');
 
 -- --------------------------------------------------------
 
@@ -280,161 +266,30 @@ CREATE TABLE `slotlist_subid:2` (
   `Sub_Admin_Id` int(11) NOT NULL,
   `Slot_Size` varchar(20) NOT NULL,
   `PricePerHour` int(20) NOT NULL,
-  `Slot_Status` varchar(20) NOT NULL
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `slotlist_subid:2`
 --
 
-INSERT INTO `slotlist_subid:2` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`) VALUES
-(1, 2, 'Small', 40, 'Not Connected'),
-(2, 2, 'Small', 40, 'Not Connected'),
-(3, 2, 'Small', 40, 'Not Connected'),
-(4, 2, 'Small', 40, 'Not Connected'),
-(5, 2, 'Small', 40, 'Not Connected'),
-(6, 2, 'Medium', 80, 'Not Connected'),
-(7, 2, 'Medium', 80, 'Not Connected'),
-(8, 2, 'Medium', 80, 'Not Connected'),
-(9, 2, 'Medium', 80, 'Not Connected'),
-(10, 2, 'Medium', 80, 'Not Connected'),
-(11, 2, 'Medium', 80, 'Not Connected'),
-(12, 2, 'Medium', 80, 'Not Connected'),
-(13, 2, 'Medium', 80, 'Not Connected'),
-(14, 2, 'Medium', 80, 'Not Connected'),
-(15, 2, 'Medium', 80, 'Not Connected'),
-(16, 2, 'Large', 120, 'Not Connected'),
-(17, 2, 'Large', 120, 'Not Connected'),
-(18, 2, 'Large', 120, 'Not Connected'),
-(19, 2, 'Large', 120, 'Not Connected'),
-(20, 2, 'Large', 120, 'Not Connected');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `slotlist_subid:4`
---
-
-CREATE TABLE `slotlist_subid:4` (
-  `Slot_Id` int(11) NOT NULL,
-  `Sub_Admin_Id` int(11) NOT NULL,
-  `Slot_Size` varchar(20) NOT NULL,
-  `PricePerHour` int(20) NOT NULL,
-  `Slot_Status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `slotlist_subid:4`
---
-
-INSERT INTO `slotlist_subid:4` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`) VALUES
-(1, 4, 'Small', 40, 'Not Connected'),
-(2, 4, 'Small', 40, 'Not Connected'),
-(3, 4, 'Small', 40, 'Not Connected'),
-(4, 4, 'Small', 40, 'Not Connected'),
-(5, 4, 'Medium', 70, 'Not Connected'),
-(6, 4, 'Medium', 70, 'Not Connected'),
-(7, 4, 'Medium', 70, 'Not Connected'),
-(8, 4, 'Medium', 70, 'Not Connected'),
-(9, 4, 'Medium', 70, 'Not Connected'),
-(10, 4, 'Medium', 70, 'Not Connected'),
-(11, 4, 'Medium', 70, 'Not Connected'),
-(12, 4, 'Medium', 70, 'Not Connected'),
-(13, 4, 'Large', 100, 'Not Connected'),
-(14, 4, 'Large', 100, 'Not Connected'),
-(15, 4, 'Large', 100, 'Not Connected'),
-(16, 4, 'Large', 100, 'Not Connected'),
-(17, 4, 'Large', 100, 'Not Connected');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `slotlist_subid:6`
---
-
-CREATE TABLE `slotlist_subid:6` (
-  `Slot_Id` int(11) NOT NULL,
-  `Sub_Admin_Id` int(11) NOT NULL,
-  `Slot_Size` varchar(20) NOT NULL,
-  `PricePerHour` int(20) NOT NULL,
-  `Slot_Status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `slotlist_subid:6`
---
-
-INSERT INTO `slotlist_subid:6` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`) VALUES
-(1, 6, 'Small', 30, 'Not Connected'),
-(2, 6, 'Small', 30, 'Not Connected'),
-(3, 6, 'Small', 30, 'Not Connected'),
-(4, 6, 'Small', 30, 'Not Connected'),
-(5, 6, 'Small', 30, 'Not Connected'),
-(6, 6, 'Small', 30, 'Not Connected'),
-(7, 6, 'Small', 30, 'Not Connected'),
-(8, 6, 'Small', 30, 'Not Connected'),
-(9, 6, 'Small', 30, 'Not Connected'),
-(10, 6, 'Small', 30, 'Not Connected'),
-(11, 6, 'Medium', 50, 'Not Connected'),
-(12, 6, 'Medium', 50, 'Not Connected'),
-(13, 6, 'Medium', 50, 'Not Connected'),
-(14, 6, 'Medium', 50, 'Not Connected'),
-(15, 6, 'Medium', 50, 'Not Connected'),
-(16, 6, 'Medium', 50, 'Not Connected'),
-(17, 6, 'Medium', 50, 'Not Connected'),
-(18, 6, 'Medium', 50, 'Not Connected'),
-(19, 6, 'Medium', 50, 'Not Connected'),
-(20, 6, 'Medium', 50, 'Not Connected'),
-(21, 6, 'Medium', 50, 'Not Connected'),
-(22, 6, 'Medium', 50, 'Not Connected'),
-(23, 6, 'Medium', 50, 'Not Connected'),
-(24, 6, 'Medium', 50, 'Not Connected'),
-(25, 6, 'Medium', 50, 'Not Connected'),
-(26, 6, 'Medium', 50, 'Not Connected'),
-(27, 6, 'Medium', 50, 'Not Connected'),
-(28, 6, 'Medium', 50, 'Not Connected'),
-(29, 6, 'Medium', 50, 'Not Connected'),
-(30, 6, 'Medium', 50, 'Not Connected'),
-(31, 6, 'Large', 80, 'Not Connected'),
-(32, 6, 'Large', 80, 'Not Connected'),
-(33, 6, 'Large', 80, 'Not Connected'),
-(34, 6, 'Large', 80, 'Not Connected'),
-(35, 6, 'Large', 80, 'Not Connected');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `slotlist_subid:411`
---
-
-CREATE TABLE `slotlist_subid:411` (
-  `Slot_Id` int(11) NOT NULL,
-  `Sub_Admin_Id` int(11) NOT NULL,
-  `Slot_Size` varchar(20) NOT NULL,
-  `PricePerHour` int(20) NOT NULL,
-  `Slot_Status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `slotlist_subid:411`
---
-
-INSERT INTO `slotlist_subid:411` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`) VALUES
-(1, 411, 'Small', 50, 'Not Connected'),
-(2, 411, 'Small', 50, 'Not Connected'),
-(3, 411, 'Small', 50, 'Not Connected'),
-(4, 411, 'Small', 50, 'Not Connected'),
-(5, 411, 'Small', 50, 'Not Connected'),
-(6, 411, 'Medium', 100, 'Not Connected'),
-(7, 411, 'Medium', 100, 'Not Connected'),
-(8, 411, 'Medium', 100, 'Not Connected'),
-(9, 411, 'Medium', 100, 'Not Connected'),
-(10, 411, 'Medium', 100, 'Not Connected'),
-(11, 411, 'Large', 150, 'Not Connected'),
-(12, 411, 'Large', 150, 'Not Connected'),
-(13, 411, 'Large', 150, 'Not Connected'),
-(14, 411, 'Large', 150, 'Not Connected'),
-(15, 411, 'Large', 150, 'Not Connected');
+INSERT INTO `slotlist_subid:2` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 2, 'Small', 40, 'Not Connected', 'Available'),
+(2, 2, 'Small', 40, 'Not Connected', 'Available'),
+(3, 2, 'Small', 40, 'Not Connected', 'Available'),
+(4, 2, 'Small', 40, 'Not Connected', 'Available'),
+(5, 2, 'Small', 40, 'Not Connected', 'Available'),
+(6, 2, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 2, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 2, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 2, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 2, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 2, 'Large', 80, 'Not Connected', 'Available'),
+(12, 2, 'Large', 80, 'Not Connected', 'Available'),
+(13, 2, 'Large', 80, 'Not Connected', 'Available'),
+(14, 2, 'Large', 80, 'Not Connected', 'Available'),
+(15, 2, 'Large', 80, 'Not Connected', 'Available');
 
 -- --------------------------------------------------------
 
@@ -707,24 +562,6 @@ ALTER TABLE `slotlist_subid:2`
   ADD PRIMARY KEY (`Slot_Id`);
 
 --
--- Indexes for table `slotlist_subid:4`
---
-ALTER TABLE `slotlist_subid:4`
-  ADD PRIMARY KEY (`Slot_Id`);
-
---
--- Indexes for table `slotlist_subid:6`
---
-ALTER TABLE `slotlist_subid:6`
-  ADD PRIMARY KEY (`Slot_Id`);
-
---
--- Indexes for table `slotlist_subid:411`
---
-ALTER TABLE `slotlist_subid:411`
-  ADD PRIMARY KEY (`Slot_Id`);
-
---
 -- Indexes for table `subadmin_list`
 --
 ALTER TABLE `subadmin_list`
@@ -750,7 +587,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `booking_request`
 --
 ALTER TABLE `booking_request`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `slotlist_subid:1`
@@ -762,24 +599,6 @@ ALTER TABLE `slotlist_subid:1`
 -- AUTO_INCREMENT for table `slotlist_subid:2`
 --
 ALTER TABLE `slotlist_subid:2`
-  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `slotlist_subid:4`
---
-ALTER TABLE `slotlist_subid:4`
-  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `slotlist_subid:6`
---
-ALTER TABLE `slotlist_subid:6`
-  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- AUTO_INCREMENT for table `slotlist_subid:411`
---
-ALTER TABLE `slotlist_subid:411`
   MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
