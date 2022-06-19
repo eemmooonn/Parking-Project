@@ -23,14 +23,20 @@ if(isset($_POST['accept']))
 {
   $booking_id = $_POST["booking_id"];
   $totalrentcost= $_POST["totalrentcost"];
+<<<<<<< HEAD
   $slotNo=$_POST["slot_No"];
+=======
+>>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
 
   $sqlInsert="INSERT INTO `booked_list` SELECT * FROM `booking_request` WHERE booking_id=$booking_id";
   $insert = mysqli_query($con, $sqlInsert);
 
+<<<<<<< HEAD
   $sqlBookingStatus="UPDATE `slotlist_subid:$id` SET Booking_Status ='Booked'  WHERE Slot_Id=$slotNo";
   $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
 
+=======
+>>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
   $sqlBalance="UPDATE `balance` SET current_balance = current_balance+$totalrentcost WHERE sub_id=$id ";
   $sqlBalanceInsert = mysqli_query($con, $sqlBalance);
 
@@ -220,7 +226,10 @@ if(isset($_POST['remove']))
                                         
                                         <input name="booking_id" type="hidden" value="'.$booking_id.'">
                                         <input name="totalrentcost" type="hidden" value="'.$totalrentcost.'">
+<<<<<<< HEAD
                                         <input name="slot_No" type="hidden" value="'.$slot_No.'">
+=======
+>>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
                                         <button name="accept">Accept</button>
                                         <button name="remove">Remove</button>
                                     </form>

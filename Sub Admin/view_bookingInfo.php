@@ -22,6 +22,7 @@ $password = $row["password"];
 if(isset($_POST['remove']))
 {
   $booking_id = $_POST["booking_id"];
+<<<<<<< HEAD
   $slotNo = $_POST["slot_No"];
 
 
@@ -33,6 +34,12 @@ if(isset($_POST['remove']))
 
   $sqlBookingStatus="UPDATE `slotlist_subid:$id` SET Booking_Status ='Available'  WHERE Slot_Id=$slotNo";
   $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
+=======
+  $sqlInsert="INSERT INTO `removed_bookedlist` SELECT * FROM `booked_list` WHERE booking_id=$booking_id";
+  $insert = mysqli_query($con, $sqlInsert);
+  $sqlDelete="DELETE FROM `booked_list` WHERE `booking_id` =$booking_id ";
+  $delete = mysqli_query($con, $sqlDelete);
+>>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
 }
 
 ?>
@@ -207,7 +214,10 @@ if(isset($_POST['remove']))
                                     <td>
                                     <form method="post">
                                         <input name="booking_id" type="hidden" value="'.$booking_id.'">
+<<<<<<< HEAD
                                         <input name="slot_No" type="hidden" value="'.$slot_No.'">
+=======
+>>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
                                         <button name="remove">Remove</button>
                                     </form>
 
