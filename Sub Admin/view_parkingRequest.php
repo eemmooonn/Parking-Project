@@ -23,20 +23,14 @@ if(isset($_POST['accept']))
 {
   $booking_id = $_POST["booking_id"];
   $totalrentcost= $_POST["totalrentcost"];
-<<<<<<< HEAD
   $slotNo=$_POST["slot_No"];
-=======
->>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
 
   $sqlInsert="INSERT INTO `booked_list` SELECT * FROM `booking_request` WHERE booking_id=$booking_id";
   $insert = mysqli_query($con, $sqlInsert);
 
-<<<<<<< HEAD
   $sqlBookingStatus="UPDATE `slotlist_subid:$id` SET Booking_Status ='Booked'  WHERE Slot_Id=$slotNo";
   $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
 
-=======
->>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
   $sqlBalance="UPDATE `balance` SET current_balance = current_balance+$totalrentcost WHERE sub_id=$id ";
   $sqlBalanceInsert = mysqli_query($con, $sqlBalance);
 

@@ -22,7 +22,6 @@ $password = $row["password"];
 if(isset($_POST['remove']))
 {
   $booking_id = $_POST["booking_id"];
-<<<<<<< HEAD
   $slotNo = $_POST["slot_No"];
 
 
@@ -39,7 +38,6 @@ if(isset($_POST['remove']))
   $insert = mysqli_query($con, $sqlInsert);
   $sqlDelete="DELETE FROM `booked_list` WHERE `booking_id` =$booking_id ";
   $delete = mysqli_query($con, $sqlDelete);
->>>>>>> 697d6cf5095a54f3ae01c87aaab6e07c3e9258d9
 }
 
 ?>
