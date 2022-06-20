@@ -74,6 +74,8 @@ $totalParkingHour = $row['totalparkinghour'];
         <h2 class="heading">Remaining Time</h2>
         <div class="parking_status">  
             <?php 
+                date_default_timezone_set('Asia/Dhaka');
+
                 $newArrival = strtotime($arrival_Date)+ strtotime($arrival_Time);
                 $currentDate= strtotime(date("Y-m-d"));
                 $currentTime= strtotime(time());
@@ -81,9 +83,10 @@ $totalParkingHour = $row['totalparkinghour'];
                 $diff=$newArrival-($currentDate+$currentTime);
 
                 $remaingMinutes=$diff/60;
-                $remaingHours=$diff/60;
+                $remaingHours=$diff/60*60;
                 $remaingSeconds=$diff%60;
 
+                echo date("Y-m-d h:i:sa") . "<br>";
                 echo date("Y-m-d h:i:sa", $diff) . "<br>";
                 echo $remaingHours.":".$remaingMinutes.":".$remaingSeconds. "<br>";
             
