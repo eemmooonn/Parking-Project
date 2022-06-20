@@ -72,6 +72,7 @@ $id = $row['id'];
                             <th scope="col">Payment Method</th>
                             <th scope="col">Transaction ID</th>
                             <th scope="col">Booking Time</th>
+                            <th scope="col">Remaing Time</th>
 
                         </tr>       
                     </thead>
@@ -115,6 +116,15 @@ $id = $row['id'];
                                <td>' . $payment_method . '</td>
                                <td>' . $transaction_id . '</td>
                                <td>' . $booking_time . '</td>
+                               <td>
+                                    <form action="remainingBookTime.php" method="post">
+                                        
+                                        <input name="booking_id" type="hidden" value="'.$booking_id.'">
+                                        <button name="request">View</button>
+                                        
+                                    </form>
+
+                                </td>
                            </tr>';
                            }
                        } else {
@@ -199,10 +209,10 @@ $id = $row['id'];
                                <td>' . $booking_time . '</td>
 
                                <td>
-                                    <form action="remainingTime.php" method="post">
+                                    <form action="remainingParkingTime.php" method="post">
                                         
                                         <input name="booking_id" type="hidden" value="'.$booking_id.'">
-                                        <button name="view">View</button>
+                                        <button name="booked">View</button>
                                         
                                     </form>
 

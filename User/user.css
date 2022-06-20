@@ -72,6 +72,12 @@
     color: white;
     font-size: 25px;
   }
+  .remaingTime{
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+  }
 
   
   .nav-links li {

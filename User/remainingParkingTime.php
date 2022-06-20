@@ -22,16 +22,21 @@ $id = $row['id'];
   }
 ?>
 <?php
-$bookingID=$_SESSION['booking_id'];
-$bookedList = "SELECT * FROM `booked_list` WHERE booking_id='$bookingID'";
-$bookedListResult = mysqli_query($con, $bookedList);
-$row = mysqli_fetch_assoc($bookedListResult);
-$placeid = $row['place_id'];
-$arrival_Date = $row['arrival_date'];
-$arrival_Time = $row['arrival_time'];
-$departure_Date = $row['departure_date'];
-$departure_Time = $row['departure_time'];
-$totalParkingHour = $row['totalparkinghour'];
+
+if(isset($_POST['booked']))
+{
+  $bookingID=$_SESSION['booking_id'];
+  $bookedList = "SELECT * FROM `booked_list` WHERE booking_id='$bookingID'";
+  $bookedListResult = mysqli_query($con, $bookedList);
+  $row = mysqli_fetch_assoc($bookedListResult);
+  $placeid = $row['place_id'];
+  $arrival_Date = $row['arrival_date'];
+  $arrival_Time = $row['arrival_time'];
+  $departure_Date = $row['departure_date'];
+  $departure_Time = $row['departure_time'];
+  $totalParkingHour = $row['totalparkinghour'];
+}
+
 
 ?>
 
@@ -41,6 +46,7 @@ $totalParkingHour = $row['totalparkinghour'];
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="stylesheet" href="user.css" />
     <title>ParkO | Book Your Parking</title>
   </head>
@@ -71,36 +77,51 @@ $totalParkingHour = $row['totalparkinghour'];
 
         <img src="../images/menu.png" class="menubar" onclick="togglebtn()" />
       </nav>
-        <h2 class="heading">Remaining Time</h2>
-        <div class="parking_status">  
+        <h2 class="heading">Your Remaining Parking Time</h2>
+        
+        <div class="parking_status"> 
+          
             <?php 
                 date_default_timezone_set('Asia/Dhaka');
 
-                $newArrival = strtotime($arrival_Date)+ strtotime($arrival_Time);
-                $currentDate= strtotime(date("Y-m-d"));
-                $currentTime= strtotime(time());
+                $newDeparture = ("$departure_Date $departure_Time");
+                $newDepartureTime=strtotime($newDeparture);
+              
+                $diff=$newDepartureTime-time();
 
-                $diff=$newArrival-($currentDate+$currentTime);
+                if ($diff>=0) 
+                {
+                    $Days=$diff/86400;
+                    $cleanDays=floor($Days);//Days
 
-                $remaingMinutes=$diff/60;
-                $remaingHours=$diff/60*60;
-                $remaingSeconds=$diff%60;
+                    $HoursGap=$diff-($cleanDays*86400);
+                    $Hours=$HoursGap/3600;
+                    $cleanHours=floor($Hours);//Hours
 
-                echo date("Y-m-d h:i:sa") . "<br>";
-                echo date("Y-m-d h:i:sa", $diff) . "<br>";
-                echo $remaingHours.":".$remaingMinutes.":".$remaingSeconds. "<br>";
+                    $MinutesGap=($Hours*3600)-($cleanHours*3600);
+                    $Minutes=$MinutesGap/60;
+                    $cleanMinutes=floor($Minutes);//Minutes
+
+                    $Seconds=floor(($Minutes*60)-($cleanMinutes*60));//Seconds
+
+                    
+
+                    echo '
+                    <div>
+                    <p class="remaingTime"><br><br>'.$cleanDays.' Day  : '.$cleanHours.' Hour  : '.$cleanMinutes.' Minute  : '.$Seconds.' Seconds</p>
+                    </div>';
+                }
+                else
+                {
+                    echo '
+                    <div>
+                    <p class="remaingTime"><br><br>Parking Time Over!</p>
+                    </div>';
+                }
+
             
             ?>
 
-            
-        
-        </div>
-
-
-        
-        
-
-      
 
       <div class="popup" id="popup">
         <p>
@@ -126,7 +147,14 @@ $totalParkingHour = $row['totalparkinghour'];
         popup.classList.remove("open-popup");
       }
 
-      let popup = document.getElementById("popup");
+      let popup = document.getElementById("popup");    
+      
+    </script>
+
+    <script>
+
+     
+
     </script>
 
 
