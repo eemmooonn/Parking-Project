@@ -35,6 +35,8 @@ if(isset($_POST['booked']))
   $departure_Date = $row['departure_date'];
   $departure_Time = $row['departure_time'];
   $totalParkingHour = $row['totalparkinghour'];
+  $totalrentcost = $row["totalrentcost"];
+  $slot_No = $row["slot_No"];
 }
 
 
@@ -113,6 +115,15 @@ if(isset($_POST['booked']))
                 }
                 else
                 {
+                  $sqlInsert="INSERT INTO `removed_bookedlist` SELECT * FROM `booked_list` WHERE booking_id=$bookingID";
+                  $insert = mysqli_query($con, $sqlInsert);
+                
+                  $sqlDelete="DELETE FROM `booked_list` WHERE `booking_id`=$bookingID ";
+                  $delete = mysqli_query($con, $sqlDelete);
+                
+                  $sqlBookingStatus="UPDATE `slotlist_subid:$placeid` SET Booking_Status ='Available'  WHERE Slot_Id=$slot_No";
+                  $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
+                  
                     echo '
                     <div>
                     <p class="remaingTime"><br><br>Parking Time Over!</p>

@@ -130,7 +130,7 @@ $id = $row['id'];
                        } else {
                            echo '
                        <tr>
-                         <td colspan="5">No Booking Found</td>
+                         <td colspan="15">No Booking Found</td>
                        </tr>
                        ';
                        }
@@ -224,7 +224,7 @@ $id = $row['id'];
                        } else {
                            echo '
                        <tr>
-                         <td colspan="5">No Booking Found</td>
+                         <td colspan="15">No Booking Found</td>
                        </tr>
                        ';
                        }

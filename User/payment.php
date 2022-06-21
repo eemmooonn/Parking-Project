@@ -37,6 +37,10 @@ $arrival_Time= strtotime($_SESSION['arrival_Time'])/60;
 $departure_Date= strtotime($_SESSION['departure_Date'])/60;
 $departure_Time= strtotime($_SESSION['departure_Time'])/60;
 
+//Time validation
+$arrivalCheck = strtotime(("$_SESSION[arrival_Date] $_SESSION[arrival_Time]"));
+$departureCheck = strtotime(("$_SESSION[departure_Date] $_SESSION[departure_Time]"));
+
 //Calulation
 $totalParkingTime=(($departure_Date+$departure_Time)-($arrival_Date+$arrival_Time))/60;
 $totalRent=floor($totalParkingTime*$priceperhour);
@@ -50,6 +54,13 @@ $SubAdmin_phone = $row["phone"];
 
 if(isset($_POST['confirm']))
 {
+  
+  if ( $departureCheck<$arrivalCheck )
+  {
+    echo "<script>alert('Please select valid time!') </script>";
+  }
+  else
+  {
     $paymentMethod = $_POST["paymentMethod"]; 
     $transactionId = $_POST["transactionId"];
 
@@ -96,7 +107,7 @@ if(isset($_POST['confirm']))
     {
       echo "<script>alert('Please submit everything correctly!') </script>";
     }
-
+  }
     
     
 }

@@ -35,6 +35,8 @@ if(isset($_POST['request']))
   $departure_Date = $row['departure_date'];
   $departure_Time = $row['departure_time'];
   $totalParkingHour = $row['totalparkinghour'];
+  $totalrentcost = $row["totalrentcost"];
+  $slot_No = $row["slot_No"];
 }
 
 
@@ -107,13 +109,27 @@ if(isset($_POST['request']))
   
                   echo '
                   <div>
-                    <p class="remaingTime"><br>'.$cleanDays.' Day  : '.$cleanHours.' Hour  : '.$cleanMinutes.' Minute  : '.$Seconds.' Seconds</p>
+                    <p class="remaingTime"><br><br>'.$cleanDays.' Day  : '.$cleanHours.' Hour  : '.$cleanMinutes.' Minute  : '.$Seconds.' Seconds</p>
                   </div>';
                 }
                 else {
+
+                  $sqlInsert="INSERT INTO `booked_list` SELECT * FROM `booking_request` WHERE booking_id=$bookingID";
+                  $insert = mysqli_query($con, $sqlInsert);
+                
+                  $sqlBookingStatus="UPDATE `slotlist_subid:$placeid` SET Booking_Status ='Booked'  WHERE Slot_Id=$slot_No";
+                  $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
+                
+                  $sqlBalance="UPDATE `balance` SET current_balance = current_balance+$totalrentcost WHERE sub_id=$placeid ";
+                  $sqlBalanceInsert = mysqli_query($con, $sqlBalance);
+                
+                  $sqlDelete="DELETE FROM `booking_request` WHERE `booking_id` =$bookingID ";
+                  $delete = mysqli_query($con, $sqlDelete);
+
+
                   echo '
                   <div>
-                    <p class="remaingTime"><br><br>Payment is not complete!</p>
+                    <p class="remaingTime"><br><br>Waiting time is over!<br>Please check the booked slot!</p>
                   </div>';
                 }
                 
