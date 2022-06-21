@@ -33,11 +33,7 @@ if(isset($_POST['remove']))
 
   $sqlBookingStatus="UPDATE `slotlist_subid:$id` SET Booking_Status ='Available'  WHERE Slot_Id=$slotNo";
   $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
-  
-  $sqlInsert="INSERT INTO `removed_bookedlist` SELECT * FROM `booked_list` WHERE booking_id=$booking_id";
-  $insert = mysqli_query($con, $sqlInsert);
-  $sqlDelete="DELETE FROM `booked_list` WHERE `booking_id` =$booking_id ";
-  $delete = mysqli_query($con, $sqlDelete);
+
 }
 
 ?>
