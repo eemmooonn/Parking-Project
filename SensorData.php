@@ -1,4 +1,5 @@
 <?php
+include 'connect.php';
 
 class ArduinoData
 {
@@ -17,28 +18,58 @@ class ArduinoData
     $status1;
     if($distance1>10)
     {
-        $status1="Available";
+        $status1="Empty";
     }
     else 
     {
-        $status1="Booked";
+        $status1="Parked";
     }
-    $query1 = "UPDATE `slotlist_subid:1` SET `Slot_Status` = '".$status1."' WHERE `Slot_Id` = 1";
+    $query1 = "UPDATE `slotlist_subid:1` SET `Slot_Status` ='$status1' WHERE `Slot_Id` = 1";
     $result1 = mysqli_query($con,$query1);
 
 
     $status2;
     if($distance2>10)
     {
-        $status2="Available";
+        $status2="Empty";
     }
     else 
     {
-        $status2="Booked";
+        $status2="Parked";
     }
 
-    $query2 = "UPDATE `slotlist_subid:1` SET `Slot_Status` = '".$status2."' WHERE `Slot_Id` = 2";
+    $query2 = "UPDATE `slotlist_subid:1` SET `Slot_Status` ='$status2' WHERE `Slot_Id` = 2";
     $result2 = mysqli_query($con,$query2);
+
+    
+
+
+    //Fetching Slot 1 Data
+    $sqlSlot1= "SELECT * FROM `slotlist_subid:1` WHERE Slot_Id=1;";
+    $sqlSlot1Result1 = mysqli_query($con, $sqlSlot1);
+    $row1 = mysqli_fetch_assoc($sqlSlot1Result1);
+    $slotstatus1 = $row1["Slot_Status"];
+    $bookingstatus1 = $row1["Booking_Status"];
+
+
+    if ($slotstatus1=="Parked" && $bookingstatus1=="Available") 
+    {
+        $sqlOverTime1="UPDATE `overtime_subid:1` SET Total_Overtime = Total_Overtime+1 WHERE Sub_Id=1";
+        $sqlOverTime1Update1 = mysqli_query($con, $sqlOverTime1);
+    }
+    //Fetching Slot 2 Data
+    $sqlSlot2= "SELECT * FROM `slotlist_subid:1` WHERE Slot_Id=2;";
+    $sqlSlot2Result2 = mysqli_query($con, $sqlSlot2);
+    $row2 = mysqli_fetch_assoc($sqlSlot2Result2);
+    $slotstatus2 = $row2["Slot_Status"];
+    $bookingstatus2 = $row2["Booking_Status"];
+
+    if ($slotstatus2=="Parked" && $bookingstatus2=="Available") 
+    {
+        $sqlOverTime2="UPDATE `overtime_subid:1` SET Total_Overtime = Total_Overtime+1 WHERE Sub_Id=1";
+        $sqlOverTime2Update2 = mysqli_query($con, $sqlOverTime2);
+    }
+
  }
  
 }
@@ -47,6 +78,7 @@ if($_GET['distance1'] != '' and  $_GET['distance2'] != '')
 {
  $ArduinoData=new ArduinoData($_GET['distance1'],$_GET['distance2']);
 }
+
 
 
 ?>

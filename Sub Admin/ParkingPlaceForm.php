@@ -86,6 +86,16 @@ if (isset($_POST['submit'])) {
                           `Booking_Status` VARCHAR(20) NOT NULL ,
                           PRIMARY KEY  (`Slot_Id`))";
   $tableCreateRun = mysqli_query($con, $tableCreate);
+  //Creating Slot table
+  $tableCreateOvertime = "CREATE TABLE `overtime_subid:$subadminid` (
+                          `Sub_Id` INT(11) NOT NULL ,
+                          `Total_Overtime` INT(20) NOT NULL ,
+                          PRIMARY KEY  (`Sub_Id`))";
+  $tableCreateOvertimeRun = mysqli_query($con, $tableCreateOvertime);
+  $OverTimeInsert ="INSERT INTO `overtime_subid:$subadminid` (Sub_Id, Total_Overtime)   
+    values('$subadminid', '0')  ";
+  $OverTimeInsertRun = mysqli_query($con, $OverTimeInsert);
+
 
   //Inserting small slot in the slot table
   $smallInsert ="INSERT INTO `slotlist_subid:$subadminid` (Sub_Admin_Id, Slot_Size, PricePerHour, Slot_Status, Booking_Status)   
