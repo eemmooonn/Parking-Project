@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2022 at 08:23 PM
+-- Generation Time: Jun 22, 2022 at 04:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -57,7 +57,8 @@ CREATE TABLE `balance` (
 --
 
 INSERT INTO `balance` (`sub_id`, `current_balance`) VALUES
-(1, 0);
+(1, 0),
+(2, 0);
 
 -- --------------------------------------------------------
 
@@ -85,6 +86,13 @@ CREATE TABLE `booked_list` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `booked_list`
+--
+
+INSERT INTO `booked_list` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
+(4, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-22', '17:55:00', '2022-06-22', '23:55:00', 6, 300, '', 'TYQI119819BSB', '2022-06-22 17:50:33');
+
 -- --------------------------------------------------------
 
 --
@@ -111,23 +119,31 @@ CREATE TABLE `booking_request` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `booking_request`
+--
+
+INSERT INTO `booking_request` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
+(1, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '15:30:00', '2022-06-24', '10:30:00', 19, 570, 'bKash', 'TS24119AFCK4780', '2022-06-22 17:27:26');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `overtime_subid:1`
+-- Table structure for table `overtime`
 --
 
-CREATE TABLE `overtime_subid:1` (
+CREATE TABLE `overtime` (
   `Sub_Id` int(11) NOT NULL,
   `Total_Overtime` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `overtime_subid:1`
+-- Dumping data for table `overtime`
 --
 
-INSERT INTO `overtime_subid:1` (`Sub_Id`, `Total_Overtime`) VALUES
-(1, 62);
+INSERT INTO `overtime` (`Sub_Id`, `Total_Overtime`) VALUES
+(1, 90),
+(2, 120);
 
 -- --------------------------------------------------------
 
@@ -158,8 +174,8 @@ CREATE TABLE `parkingplace` (
 --
 
 INSERT INTO `parkingplace` (`id`, `email`, `division`, `thana`, `ward`, `fulladdress`, `opentime`, `closetime`, `parkingcategory`, `facility`, `parkingplace`, `guardnumber`, `smallslot`, `mediumslot`, `largeslot`) VALUES
-(1, 'mazumderemon@gmail.com', 'Dhaka', 'Jatrabari', 35, '26/9, Jatrabari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '019181273731', 5, 5, 5),
-(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Motijheel', 34, '24/9, Motijheel, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '0181251731831', 5, 5, 5);
+(1, 'mazumderemon@gmail.com', 'Dhaka', 'Jatrabari', 12, '26/9, Jatrabari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '019121818913', 5, 5, 5),
+(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Motijheel', 19, '24/9, Motijheel, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01612881398', 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -187,6 +203,13 @@ CREATE TABLE `removed_bookedlist` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `removed_bookedlist`
+--
+
+INSERT INTO `removed_bookedlist` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
+(2, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 6, 50, '2022-06-22', '17:40:00', '2022-06-22', '20:40:00', 3, 150, 'Nagad', 'UUAGF17371983', '2022-06-22 17:38:46');
+
 -- --------------------------------------------------------
 
 --
@@ -213,6 +236,13 @@ CREATE TABLE `removed_bookingrequest` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `removed_bookingrequest`
+--
+
+INSERT INTO `removed_bookingrequest` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
+(3, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 30, '2022-06-23', '17:50:00', '2022-06-24', '17:50:00', 24, 720, '', 'JSAF6AIOFAHF', '2022-06-22 17:49:46');
+
 -- --------------------------------------------------------
 
 --
@@ -233,8 +263,8 @@ CREATE TABLE `slotlist_subid:1` (
 --
 
 INSERT INTO `slotlist_subid:1` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
-(1, 1, 'Small', 30, 'Empty', 'Available'),
-(2, 1, 'Small', 30, 'Empty', 'Available'),
+(1, 1, 'Small', 30, 'Parked', 'Available'),
+(2, 1, 'Small', 30, 'Parked', 'Available'),
 (3, 1, 'Small', 30, 'Not Connected', 'Available'),
 (4, 1, 'Small', 30, 'Not Connected', 'Available'),
 (5, 1, 'Small', 30, 'Not Connected', 'Available'),
@@ -274,16 +304,16 @@ INSERT INTO `slotlist_subid:2` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePe
 (3, 2, 'Small', 40, 'Not Connected', 'Available'),
 (4, 2, 'Small', 40, 'Not Connected', 'Available'),
 (5, 2, 'Small', 40, 'Not Connected', 'Available'),
-(6, 2, 'Medium', 50, 'Not Connected', 'Available'),
-(7, 2, 'Medium', 50, 'Not Connected', 'Available'),
-(8, 2, 'Medium', 50, 'Not Connected', 'Available'),
-(9, 2, 'Medium', 50, 'Not Connected', 'Available'),
-(10, 2, 'Medium', 50, 'Not Connected', 'Available'),
-(11, 2, 'Large', 80, 'Not Connected', 'Available'),
-(12, 2, 'Large', 80, 'Not Connected', 'Available'),
-(13, 2, 'Large', 80, 'Not Connected', 'Available'),
-(14, 2, 'Large', 80, 'Not Connected', 'Available'),
-(15, 2, 'Large', 80, 'Not Connected', 'Available');
+(6, 2, 'Medium', 70, 'Not Connected', 'Available'),
+(7, 2, 'Medium', 70, 'Not Connected', 'Available'),
+(8, 2, 'Medium', 70, 'Not Connected', 'Available'),
+(9, 2, 'Medium', 70, 'Not Connected', 'Available'),
+(10, 2, 'Medium', 70, 'Not Connected', 'Available'),
+(11, 2, 'Large', 100, 'Not Connected', 'Available'),
+(12, 2, 'Large', 100, 'Not Connected', 'Available'),
+(13, 2, 'Large', 100, 'Not Connected', 'Available'),
+(14, 2, 'Large', 100, 'Not Connected', 'Available'),
+(15, 2, 'Large', 100, 'Not Connected', 'Available');
 
 -- --------------------------------------------------------
 
@@ -526,9 +556,9 @@ ALTER TABLE `booking_request`
   ADD PRIMARY KEY (`booking_id`);
 
 --
--- Indexes for table `overtime_subid:1`
+-- Indexes for table `overtime`
 --
-ALTER TABLE `overtime_subid:1`
+ALTER TABLE `overtime`
   ADD PRIMARY KEY (`Sub_Id`);
 
 --
@@ -587,7 +617,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `booking_request`
 --
 ALTER TABLE `booking_request`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `slotlist_subid:1`
