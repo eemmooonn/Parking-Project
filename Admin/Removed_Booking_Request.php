@@ -80,6 +80,12 @@ include '../connect.php';
               <span class="link-name">Removed Booking Request</span>
             </a>
           </li>
+          <li>
+            <a href="Overtime.php">
+              <i class="uil uil-tachometer-fast-alt"></i>
+              <span class="link-name">Overtime List</span>
+            </a>
+          </li>
       </ul>
 
       <ul class="logout-mode">
@@ -115,7 +121,7 @@ include '../connect.php';
 
     <div class="dash-content">
       <div class="overview">
-        <a href="view_SubAdminList.php">
+        <a href="Removed_Booking_Request.php">
           <div class="title">
             <i class="uil uil-map-marker-info"></i>
             <span class="text">Removed Booking Request</span>
@@ -150,7 +156,7 @@ include '../connect.php';
             <?php
             if (isset($_POST['search-btn'])) {
               $SearchText = $_POST['search-text'];
-              $sql_search = "SELECT * FROM `removed_bookedlist` WHERE user_id='$SearchText' OR place_id='$SearchText'";
+              $sql_search = "SELECT * FROM `removed_bookingrequest` WHERE user_id='$SearchText' OR place_id='$SearchText'";
               $SearchResult = mysqli_query($con, $sql_search);
               if (mysqli_num_rows($SearchResult) > 0) {
                 while ($row = mysqli_fetch_assoc($SearchResult)) {
@@ -202,7 +208,7 @@ include '../connect.php';
                             ';
               }
             } else {
-              $sql = "SELECT * FROM `removed_bookedlist`";
+              $sql = "SELECT * FROM `removed_bookingrequest`";
               $result = mysqli_query($con, $sql);
               if ($result) 
               {

@@ -80,6 +80,12 @@ include '../connect.php';
               <span class="link-name">Removed Booking Request</span>
             </a>
           </li>
+          <li>
+            <a href="Overtime.php">
+              <i class="uil uil-tachometer-fast-alt"></i>
+              <span class="link-name">Overtime List</span>
+            </a>
+          </li>
       </ul>
 
       <ul class="logout-mode">
@@ -115,7 +121,7 @@ include '../connect.php';
 
     <div class="dash-content">
       <div class="overview">
-        <a href="view_SubAdminList.php">
+        <a href="Current_Booked_Slot.php">
           <div class="title">
             <i class="uil uil-map-marker-info"></i>
             <span class="text">Current Booked Slot</span>
