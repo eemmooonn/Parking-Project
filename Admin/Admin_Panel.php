@@ -55,6 +55,30 @@
               <span class="link-name">User List</span>
             </a>
           </li>
+          <li>
+            <a href="All_Pending_Booking.php">
+              <i class="uil uil-angle-double-right"></i>
+              <span class="link-name">Pending Booking</span>
+            </a>
+          </li>
+          <li>
+            <a href="Current_Booked_Slot.php">
+              <i class="uil uil-arrows-merge"></i>
+              <span class="link-name">Booked Slot</span>
+            </a>
+          </li>
+          <li>
+            <a href="Booking_History.php">
+              <i class="uil uil-history"></i>
+              <span class="link-name">Booking History</span>
+            </a>
+          </li>
+          <li>
+            <a href="Removed_Booking_Request.php">
+              <i class="uil uil-trash-alt"></i>
+              <span class="link-name">Removed Booking Request</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout-mode">
@@ -74,11 +98,11 @@
       <div class="top">
         <form action="" method="" class="search-box">
           <div class="search-box">
-            <i class="uil uil-search"></i>
+          <!--  <i class="uil uil-search"></i>
             <input type="text" name="search-text" placeholder="Search here by ID or Email" required/>
-            <button type="submit" class="search" name="search-btn">Search</button>
+            <button type="submit" class="search" name="search-btn">Search</button>-->
           </div>
-        </form>
+        </form> 
           
         <div>
           <span class="admin_name"><?php echo $_SESSION['AdminLoginName']?></span>

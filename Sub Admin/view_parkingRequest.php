@@ -167,7 +167,7 @@ if(isset($_POST['remove']))
                             <th scope="col">Payment Method</th>
                             <th scope="col">Transaction ID</th>
                             <th scope="col">Booking Time</th>
-                            <th scope="col">Accept/Remove</th>
+                            <th scope="col">Remove</th>
 
                         </tr>
 
