@@ -79,6 +79,18 @@
               <span class="link-name">Removed Booking Request</span>
             </a>
           </li>
+          <li>
+            <a href="Overtime.php">
+              <i class="uil uil-tachometer-fast-alt"></i>
+              <span class="link-name">Overtime List</span>
+            </a>
+          </li>
+          <li>
+            <a href="Payment.php">
+              <i class="uil uil-bill"></i>
+              <span class="link-name">Payment</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout-mode">
@@ -116,7 +128,7 @@
         <div class="overview">
           <a href="view_UserList.php">
             <div class="title">
-              <i class="uil uil-map-marker-info"></i>
+              <i class="uil uil-users-alt"></i>
               <span class="text">User List</span>
             </div>
           </a>

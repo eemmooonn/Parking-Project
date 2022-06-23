@@ -68,10 +68,19 @@ if (isset($_POST['submit'])) {
     $largeslot = $_POST["largeslot"];
     $largeslotprice = $_POST["largeslotprice"];
   }
+  //Creating Balance Table
+  $tableCreateBalance = "CREATE TABLE `balance_subid:$subadminid` (
+                          `Booking_Id` INT(11) NOT NULL ,
+                          `Total_Paid` INT(11) NOT NULL ,
+                          `Booked_Date` DATETIME NOT NULL ,
+                          PRIMARY KEY  (`Booking_Id`))";
+  $tableCreateBalanceRun = mysqli_query($con, $tableCreateBalance);
 
-  $sqlBalance="INSERT INTO balance (sub_id, current_balance) values('$subadminid','0')";
-  $sqlBalanceResult=mysqli_query($con, $sqlBalance);
-  
+  $sql = "INSERT INTO `total_balance` (sub_id, Total_Transaction)   
+    values('$subadminid', '0') ";
+  $result = mysqli_query($con, $sql);
+
+
   $sql = "INSERT INTO `parkingplace` (id, email, division, thana, ward, fulladdress, opentime, closetime, parkingcategory, facility, parkingplace, guardnumber, smallslot, mediumslot, largeslot)   
     values('$subadminid', '$subadminemail', '$division', '$thana', '$ward', '$fulladdress', '$opentime', '$closetime', '$parkingcategory', '$facility', '$parkingplace', '$guardnumber', '$smallslot', '$mediumslot', '$largeslot' ) ";
   $result = mysqli_query($con, $sql);

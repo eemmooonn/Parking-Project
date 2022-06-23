@@ -103,7 +103,7 @@ if(isset($_POST['request']))
                   $Minutes=$MinutesGap/60;
                   $cleanMinutes=floor($Minutes);//Minutes
   
-                  $Seconds=($Minutes*60)-($cleanMinutes*60);//Seconds
+                  $Seconds=floor(($Minutes*60)-($cleanMinutes*60));//Seconds
   
                   
   
@@ -120,8 +120,12 @@ if(isset($_POST['request']))
                   $sqlBookingStatus="UPDATE `slotlist_subid:$placeid` SET Booking_Status ='Booked'  WHERE Slot_Id=$slot_No";
                   $insertBookingStatus= mysqli_query($con, $sqlBookingStatus);
                 
-                  $sqlBalance="UPDATE `balance` SET current_balance = current_balance+$totalrentcost WHERE sub_id=$placeid ";
+                  $sqlBalance="INSERT INTO `balance_subid:$placeid` (Booking_Id, Total_Paid, Booked_Date)   
+                    values('$bookingID', '$totalrentcost', now()) ";
                   $sqlBalanceInsert = mysqli_query($con, $sqlBalance);
+
+                  $sqlTotalBalance = "UPDATE `total_balance` SET 	Total_Transaction =	Total_Transaction+'$totalrentcost'  WHERE sub_id=$placeid";
+                  $resultTotalBalance = mysqli_query($con, $sqlTotalBalance);
                 
                   $sqlDelete="DELETE FROM `booking_request` WHERE `booking_id` =$bookingID ";
                   $delete = mysqli_query($con, $sqlDelete);

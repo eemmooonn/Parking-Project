@@ -72,7 +72,7 @@ $id = $row['id'];
                             <th scope="col">Payment Method</th>
                             <th scope="col">Transaction ID</th>
                             <th scope="col">Booking Time</th>
-                            <th scope="col">Remaing Time</th>
+                            <th scope="col">Remaining Time</th>
 
                         </tr>       
                     </thead>
@@ -219,6 +219,88 @@ $id = $row['id'];
                                 </td> 
 
 
+                           </tr>';
+                           }
+                       } else {
+                           echo '
+                       <tr>
+                         <td colspan="15">No Booking Found</td>
+                       </tr>
+                       ';
+                       }
+                   
+                        
+
+                    ?>
+                    </tbody>
+            </table>
+                    
+        </div>
+        
+        <h2 class="heading">Rejected Request</h2>
+        <div class="parking_status">
+            
+            <table class="styled-table-location">
+                    <thead>
+                    
+                        <tr>
+                            <th scope="col">User Name</th>
+                            <th scope="col">User Phone</th>
+                            <th scope="col">Vehicle Number</th>
+                            <th scope="col">Slot No.</th>
+                            <th scope="col">Pricer/Hour</th>
+                            <th scope="col">Arrival Date</th>
+                            <th scope="col">Arrival Time</th>
+                            <th scope="col">Departure Date</th>
+                            <th scope="col">Departure Time</th>
+                            <th scope="col">Total Parking Hour</th>
+                            <th scope="col">Total Rent Cost</th>
+                            <th scope="col">Payment Method</th>
+                            <th scope="col">Transaction ID</th>
+                            <th scope="col">Booking Time</th>
+
+                        </tr>       
+                    </thead>
+                    <tbody>
+                    <?php
+                       $bookingRequest = "SELECT * FROM `removed_bookingrequest` WHERE user_id='$id'";
+                       $bookingRequestResult = mysqli_query($con, $bookingRequest);
+                       if (mysqli_num_rows($bookingRequestResult) > 0) {
+                           while ($row = mysqli_fetch_assoc($bookingRequestResult)) {
+                               $user_name = $row["user_name"];
+                               $user_phone = $row["user_phone"];
+                               $vehicle_No = $row["vehicle_No"];
+                               $slot_No = $row["slot_No"];
+                               $priceperhour = $row["priceperhour"];
+                               $arrival_date = $row["arrival_date"];
+                               $arrival_time = $row["arrival_time"];
+                               $departure_date = $row["departure_date"];
+                               $departure_time = $row["departure_time"];
+                               $totalparkinghour = $row["totalparkinghour"];
+                               $totalrentcost = $row["totalrentcost"];
+                               $payment_method = $row["payment_method"];
+                               $transaction_id = $row["transaction_id"];
+                               $booking_time = $row["booking_time"];
+
+                               $booking_id = $row["booking_id"];
+
+
+                               echo '
+                           <tr>
+                               <td>' . $user_name . '</td>
+                               <td>' . $user_phone . '</td>
+                               <td>' . $vehicle_No . '</td>
+                               <td>' . $slot_No . '</td>
+                               <td>' . $priceperhour . '</td>
+                               <td>' . $arrival_date . '</td>
+                               <td>' . $arrival_time . '</td>
+                               <td>' . $departure_date . '</td>
+                               <td>' . $departure_time . '</td>
+                               <td>' . $totalparkinghour . '</td>
+                               <td>' . $totalrentcost . '</td>
+                               <td>' . $payment_method . '</td>
+                               <td>' . $transaction_id . '</td>
+                               <td>' . $booking_time . '</td>
                            </tr>';
                            }
                        } else {

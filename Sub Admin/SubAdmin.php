@@ -148,12 +148,12 @@ $id = $row['id'];
               <span class="text">Balance(TK)</span>
 
               <?php
-                $sql = "SELECT current_balance FROM `balance` WHERE sub_id=$id";
+                $sql = "SELECT Total_Transaction FROM `total_balance` WHERE sub_id=$id";
                 $result=mysqli_query($con,$sql);
                 $row = mysqli_fetch_assoc($result);
-                $current_balance = $row['current_balance'];
+                $Total_Transaction = $row['Total_Transaction'];
               ?>
-              <span class="number"><?php echo ''.$current_balance.''?></span>
+              <span class="number"><?php echo ''.$Total_Transaction.''?></span>
             </div>
           </a>
 

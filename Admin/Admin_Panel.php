@@ -85,6 +85,12 @@
               <span class="link-name">Overtime List</span>
             </a>
           </li>
+          <li>
+            <a href="Payment.php">
+              <i class="uil uil-bill"></i>
+              <span class="link-name">Payment</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout-mode">
@@ -121,7 +127,7 @@
         <div class="overview">
             <a href="Admin_Panel.php">
               <div class="title">
-                <i class="uil uil-map-marker-info"></i>
+                <i class="uil uil-estate"></i>
                 <span class="text">Dahsboard</span>
               </div>
             </a>
@@ -162,10 +168,10 @@
                 <span class="text">Total Transaction(TK)</span>
 
                 <?php
-                  $sql = "SELECT SUM(current_balance) FROM `balance`";
+                  $sql = "SELECT SUM(Total_Transaction) FROM `total_balance`";
                   $result=mysqli_query($con,$sql);
                   $row = mysqli_fetch_assoc($result);
-                  $current_balance = $row['SUM(current_balance)'];
+                  $current_balance = $row['SUM(Total_Transaction)'];
                 ?>
                 <span class="number"><?php echo ''.$current_balance.''?></span>
               </div>

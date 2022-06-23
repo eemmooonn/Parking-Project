@@ -86,6 +86,12 @@ include '../connect.php';
               <span class="link-name">Overtime List</span>
             </a>
           </li>
+          <li>
+            <a href="Payment.php">
+              <i class="uil uil-bill"></i>
+              <span class="link-name">Payment</span>
+            </a>
+          </li>
       </ul>
 
       <ul class="logout-mode">
@@ -123,7 +129,7 @@ include '../connect.php';
       <div class="overview">
         <a href="All_Pending_Booking.php">
           <div class="title">
-            <i class="uil uil-map-marker-info"></i>
+            <i class="uil uil-angle-double-right"></i>
             <span class="text">All Pending Booking</span>
           </div>
         </a>

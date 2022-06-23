@@ -127,10 +127,10 @@ include '../connect.php';
 
     <div class="dash-content">
       <div class="overview">
-        <a href="Overtime.php">
+        <a href="Payment.php">
           <div class="title">
-            <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Overtime</span>
+            <i class="uil uil-bill"></i>
+            <span class="text">Payment</span>
           </div>
         </a>
       </div>
@@ -140,7 +140,8 @@ include '../connect.php';
           <thead>
             <tr>
                 <th scope="col">Sub-Admin ID</th>
-                <th scope="col">Total Time</th>
+                <th scope="col">Total Transaction</th>
+                <th scope="col">Admin Receivable(20%)</th>
                 
             </tr>
           </thead>
@@ -148,39 +149,44 @@ include '../connect.php';
             <?php
             if (isset($_POST['search-btn'])) {
               $SearchText = $_POST['search-text'];
-              $sql_search = "SELECT * FROM `overtime` WHERE Sub_Id='$SearchText'";
+              $sql_search = "SELECT * FROM `total_balance` WHERE sub_id='$SearchText'";
               $SearchResult = mysqli_query($con, $sql_search);
               if (mysqli_num_rows($SearchResult) > 0) {
                 while ($row = mysqli_fetch_assoc($SearchResult)) {
-                    $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                    $Sub_Id = $row["sub_id"];
+                    $Total_Transaction = $row["Total_Transaction"];
+                    $Admin_Receivable = (20 * $Total_Transaction)/100;
+                    
 
                   echo '
                                 <tr>
                                     <td>' . $Sub_Id . '</td>
-                                    <td>' . $Total_Overtime . '</td>
+                                    <td>' . $Total_Transaction . '</td>
+                                    <td>' . $Admin_Receivable . '</td>
                                 </tr>';
                 }
               } else {
                 echo '
                             <tr>
-                              <td colspan="2">No Record Found</td>
+                              <td colspan="3">No Record Found</td>
                             </tr>
                             ';
               }
             } else {
-              $sql = "SELECT * FROM `overtime`";
+              $sql = "SELECT * FROM `total_balance`";
               $result = mysqli_query($con, $sql);
               if ($result) 
               {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                    $Sub_Id = $row["sub_id"];
+                    $Total_Transaction = $row["Total_Transaction"];
+                    $Admin_Receivable = (20 * $Total_Transaction)/100;
 
                   echo '
                                 <tr>
                                     <td>' . $Sub_Id . '</td>
-                                    <td>' . $Total_Overtime . ' Hour</td>
+                                    <td>' . $Total_Transaction . ' TK</td>
+                                    <td>' . $Admin_Receivable . ' TK</td>
                                 </tr>';
                 }
               }
