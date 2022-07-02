@@ -151,9 +151,15 @@ $id = $row['id'];
                 $sql = "SELECT Total_Transaction FROM `total_balance` WHERE sub_id=$id";
                 $result=mysqli_query($con,$sql);
                 $row = mysqli_fetch_assoc($result);
-                $Total_Transaction = $row['Total_Transaction'];
+                if ($row!=0) {
+                  $Total_Transaction = $row['Total_Transaction'];
+                  echo '<span class="number">'.$Total_Transaction.'</span>';
+                }
+                else {
+                  echo '<span class="number">0</span>';
+                }
               ?>
-              <span class="number"><?php echo ''.$Total_Transaction.''?></span>
+              
             </div>
           </a>
 

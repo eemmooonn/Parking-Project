@@ -195,7 +195,6 @@
   
   .popup {
     width: 50%;
-    height: 60%;
     background: rgb(255, 255, 255);
     border-radius: 6px;
     position: absolute;
@@ -223,7 +222,7 @@
   }
   .popup button {
     width: 20%;
-    margin-top: 100px;
+    margin-top: 5%;
     padding: 10px 10px;
     background: transparent;
     color: rgb(53, 59, 66);
@@ -277,7 +276,7 @@
       right: 7%;
     }
     .hidemenu {
-      max-height: 300px;
+      max-height: 60%;
       background: rgb(53, 59, 66);
     }
     .header h1 {
@@ -319,7 +318,6 @@
     }
     .open-popup {
       width: 90%;
-      height: 60%;
     }
     .popup button {
       width: 45%;
