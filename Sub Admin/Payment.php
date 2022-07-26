@@ -4,11 +4,17 @@ if (!isset($_SESSION['SubAdminLoginEmail'])) {
   header("location:SubAdminLogin.php");
 }
 include '../connect.php';
+
+//Fetching Subadmin Information
 $SearchText = $_SESSION['SubAdminLoginEmail'];
 $sql_search = "SELECT * FROM `subadmin_list` WHERE email='$SearchText'";
 $SearchResult = mysqli_query($con, $sql_search);
 $row = mysqli_fetch_assoc($SearchResult);
 $id = $row['id'];
+$name = $row["name"];
+$phone = $row["phone"];
+$email = $row["email"];
+$password = $row["password"];
 ?>
 
 
@@ -37,7 +43,6 @@ $id = $row['id'];
           <img src="../images/logo_dark.png" />
         </div>
         <span class="logo_name">Sub-Admin</span>
-        
       </div>
     </a>
 
@@ -98,13 +103,12 @@ $id = $row['id'];
 
   <section class="dashboard">
     <div class="top">
-      <a href="ParkingPlaceForm.php">
+      <a href="">
         <div class="Add-Parking">
-          <button type="submit" class="Add-Parking" name="AddParkingBtn">Add Parking Place</button>
         </div>
       </a>
+
       <div>
-        
         <span class="admin_name"><?php echo $_SESSION['SubAdminLoginEmail'] ?></span>
         <img src="../images/profile.png" alt="" />
       </div>
@@ -115,74 +119,40 @@ $id = $row['id'];
       <div class="overview">
         <a href="SubAdmin.php">
           <div class="title">
-            <i class="uil uil-car-sideview"></i>
-            <span class="text">Dahsboard</span>
+            <i class="uil uil-info-circle"></i>
+            <span class="text">Payment</span>
           </div>
         </a>
-        <div class="boxes">
-
-          <a class="box box1" href="view_parkingRequest.php">
-            <div class="box box1">
-              <i class="uil uil-car-sideview"></i>
-              <span class="text">Request Pending</span>
-
-              <?php
-                $sql="SELECT * FROM `booking_request` WHERE place_id=$id";
-                $result=mysqli_query($con,$sql);
-                $row = mysqli_num_rows($result);
-              ?>
-              <span class="number"><?php echo ''.$row.''?></span>
-            </div>
-          </a>
-
-          <a class="box box2" href="view_bookingInfo.php">
-            <div class="box box2">
-              <i class="uil uil-car"></i>
-              <span class="text">Booked Slot</span>
-
-              <?php
-                $sql="SELECT * FROM `booked_list` WHERE place_id=$id";
-                $result=mysqli_query($con,$sql);
-                $row = mysqli_num_rows($result);
-              ?>
-              <span class="number"><?php echo ''.$row.''?></span>
-            </div>
-          </a>
-          <a class="box box3">
-            <div class="box box3">
-              <i class="uil uil-coins"></i>
-              <span class="text">Balance(TK)</span>
-
-              <?php
-                $sql = "SELECT Total_Transaction FROM `total_balance` WHERE sub_id=$id";
-                $result=mysqli_query($con,$sql);
-                $row = mysqli_fetch_assoc($result);
-                if ($row!=0) {
-                  $Total_Transaction = $row['Total_Transaction'];
-                  echo '<span class="number">'.$Total_Transaction.'</span>';
-                }
-                else {
-                  echo '<span class="number">0</span>';
-                }
-              ?>
-              
-            </div>
-          </a>
-
-        </div>
+        
       </div>
+    <div class="activity">
+        <div class="payment">
+            <?php
+            $sql = "SELECT * FROM `total_balance` WHERE sub_id='$id'";
+              $result = mysqli_query($con, $sql);
+              if ($result) 
+              {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $Admin_Receivable = $row["Receivable"];
 
-      <div class="activity">
-        <div class="title">
-          <i class="uil uil-clock-three"></i>
-          <span class="text">Recent Activity</span>
+                echo 
+                ' 
+                  <p class="SubadminPayable">Your total Payable: '.$Admin_Receivable.' TK</p>
+                  <br>
+                  <button class="SubadminPayButton">Pay</button>
+                ';
+                }
+              }
+            ?>
         </div>
+        
 
-        <div class="activity-data">
+                <div class="activity-data">
 
-        </div>
+                </div>
 
-      </div>
+
+            </div>
 
     </div>
   </section>

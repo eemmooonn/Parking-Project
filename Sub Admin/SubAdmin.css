@@ -82,6 +82,32 @@ nav{
     cursor: pointer;
     
 }
+.payment{
+    margin: auto;
+    display: grid;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.SubadminPayable{
+    text-align: center;
+    color: black;
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 10%;
+  }
+.SubadminPayButton{
+    padding: 5px 25px;
+    outline: none;
+    border-style: solid;
+    border-color: white;
+    background: #1e3e94;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 25px;
+}
 nav.close{
     width: 73px;
 }

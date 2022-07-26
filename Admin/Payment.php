@@ -180,7 +180,7 @@ include '../connect.php';
                 while ($row = mysqli_fetch_assoc($result)) {
                     $Sub_Id = $row["sub_id"];
                     $Total_Transaction = $row["Total_Transaction"];
-                    $Admin_Receivable = (20 * $Total_Transaction)/100;
+                    $Admin_Receivable = $row["Receivable"];
 
                   echo '
                                 <tr>

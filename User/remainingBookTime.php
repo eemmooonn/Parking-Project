@@ -126,6 +126,9 @@ if(isset($_POST['request']))
 
                   $sqlTotalBalance = "UPDATE `total_balance` SET 	Total_Transaction =	Total_Transaction+'$totalrentcost'  WHERE sub_id=$placeid";
                   $resultTotalBalance = mysqli_query($con, $sqlTotalBalance);
+
+                  $sqlReceivable = "UPDATE `total_balance` SET 	Receivable = Receivable+((20 * '$totalrentcost')/100)  WHERE sub_id=$placeid";
+                  $SqlReceivableRun = mysqli_query($con, $sqlReceivable);
                 
                   $sqlDelete="DELETE FROM `booking_request` WHERE `booking_id` =$bookingID ";
                   $delete = mysqli_query($con, $sqlDelete);
