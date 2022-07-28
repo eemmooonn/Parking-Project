@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 06:49 PM
+-- Generation Time: Jul 28, 2022 at 09:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -58,9 +58,10 @@ CREATE TABLE `balance_subid:1` (
 --
 
 INSERT INTO `balance_subid:1` (`Booking_Id`, `Total_Paid`, `Booked_Date`) VALUES
-(1, 570, '2022-06-23 18:56:46'),
-(6, 90, '2022-06-23 18:57:03'),
-(7, 150, '2022-06-23 18:57:23');
+(8, 30, '2022-07-26 16:56:01'),
+(9, 29, '2022-07-26 17:01:01'),
+(10, 30, '2022-07-26 17:03:01'),
+(11, 30, '2022-07-26 17:27:01');
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,138 @@ INSERT INTO `balance_subid:1` (`Booking_Id`, `Total_Paid`, `Booked_Date`) VALUES
 --
 
 CREATE TABLE `balance_subid:2` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:4`
+--
+
+CREATE TABLE `balance_subid:4` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:5`
+--
+
+CREATE TABLE `balance_subid:5` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:6`
+--
+
+CREATE TABLE `balance_subid:6` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:357`
+--
+
+CREATE TABLE `balance_subid:357` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:358`
+--
+
+CREATE TABLE `balance_subid:358` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:359`
+--
+
+CREATE TABLE `balance_subid:359` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:360`
+--
+
+CREATE TABLE `balance_subid:360` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:361`
+--
+
+CREATE TABLE `balance_subid:361` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:362`
+--
+
+CREATE TABLE `balance_subid:362` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:368`
+--
+
+CREATE TABLE `balance_subid:368` (
+  `Booking_Id` int(11) NOT NULL,
+  `Total_Paid` int(11) NOT NULL,
+  `Booked_Date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `balance_subid:369`
+--
+
+CREATE TABLE `balance_subid:369` (
   `Booking_Id` int(11) NOT NULL,
   `Total_Paid` int(11) NOT NULL,
   `Booked_Date` datetime NOT NULL
@@ -100,13 +233,6 @@ CREATE TABLE `booked_list` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `booked_list`
---
-
-INSERT INTO `booked_list` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(1, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '15:30:00', '2022-06-24', '10:30:00', 19, 570, 'bKash', 'TS24119AFCK4780', '2022-06-22 17:27:26');
-
 -- --------------------------------------------------------
 
 --
@@ -133,13 +259,6 @@ CREATE TABLE `booking_request` (
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `booking_request`
---
-
-INSERT INTO `booking_request` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(5, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 4, 30, '2022-06-24', '12:04:00', '2022-06-26', '12:02:00', 48, 1439, 'bKash', '465877', '2022-06-23 12:01:13');
-
 -- --------------------------------------------------------
 
 --
@@ -157,7 +276,18 @@ CREATE TABLE `overtime` (
 
 INSERT INTO `overtime` (`Sub_Id`, `Total_Overtime`) VALUES
 (1, 0),
-(2, 0);
+(2, 0),
+(4, 0),
+(5, 0),
+(6, 0),
+(357, 0),
+(358, 0),
+(359, 0),
+(360, 0),
+(361, 0),
+(362, 0),
+(368, 0),
+(369, 0);
 
 -- --------------------------------------------------------
 
@@ -189,7 +319,44 @@ CREATE TABLE `parkingplace` (
 
 INSERT INTO `parkingplace` (`id`, `email`, `division`, `thana`, `ward`, `fulladdress`, `opentime`, `closetime`, `parkingcategory`, `facility`, `parkingplace`, `guardnumber`, `smallslot`, `mediumslot`, `largeslot`) VALUES
 (1, 'mazumderemon@gmail.com', 'Dhaka', 'Jatrabari', 15, '26/9, Jatrabari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01918381381', 5, 5, 5),
-(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Motijheel', 7, '23/9, Motijheel, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01818116313', 5, 5, 5);
+(2, 'emonmazumder000@gmail.com', 'Dhaka', 'Motijheel', 7, '23/9, Motijheel, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01818116313', 5, 5, 5),
+(4, 'tamim@yahoo.com', 'Dhaka', 'Paltan', 12, '21/4, Paltan, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '0162287138913', 5, 5, 5),
+(5, 'tamim2312@yahoo.com', 'Dhaka', 'Sabujbagh', 13, '11/2, Sabujbagh, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01911838113', 5, 5, 5),
+(6, 'ferdaushasanemon@gmail.com', 'Dhaka', 'Khilgaon', 2, '9/3, Khilgaon, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '019137361789', 5, 5, 5),
+(357, 'tsisse0@ezinearticles.com', 'Dhaka', 'Mugda', 7, '11/3, Mugda, Dhaka', '07:00', '23:59', 'Market', 'CCTV+Guard', 'Indoor', '01632213914', 5, 5, 5),
+(358, 'sayrs1@gnu.org', 'Dhaka', 'Shahjahanpur', 16, '12/3, Shahjahanpur, Dhaka', '07:00', '23:59', 'Residential', 'CCTV', 'Indoor', '019127263129', 5, 5, 5),
+(359, 'lgiovanitti2@geocities.com', 'Dhaka', 'Shampur', 4, '11/12, Shampur, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01912319124', 5, 5, 5),
+(360, 'gmildmott3@slideshare.net', 'Dhaka', 'Demra', 4, '7/4, Demra, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01812834749', 5, 5, 5),
+(361, 'jgough4@gov.uk', 'Dhaka', 'Kadamtali', 13, '25/9, Kadamtali, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '017182329021', 10, 5, 3),
+(362, 'jbolderstone5@cocolog-nifty.com', 'Dhaka', 'Wari', 5, '25/9, Wari, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Both(Indoor+Outdoor)', '0171461371102', 5, 5, 5),
+(368, 'sboncoeurb@webmd.com', 'Dhaka', 'Ramna', 5, '13/2, Ramna, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01818556272', 5, 5, 5),
+(369, 'shollowsc@yandex.ru', 'Dhaka', 'Dhanmondi', 9, '19/12, Dhanmondi, Dhaka', '07:00', '23:59', 'Residential', 'CCTV+Guard', 'Indoor', '01918812391', 5, 5, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_history`
+--
+
+CREATE TABLE `payment_history` (
+  `sub_id` int(11) NOT NULL,
+  `payment_method` varchar(30) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `transaction_id` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_request`
+--
+
+CREATE TABLE `payment_request` (
+  `sub_id` int(11) NOT NULL,
+  `payment_method` varchar(30) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `transaction_id` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -222,10 +389,16 @@ CREATE TABLE `removed_bookedlist` (
 --
 
 INSERT INTO `removed_bookedlist` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
+(1, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '15:30:00', '2022-06-24', '10:30:00', 19, 570, 'bKash', 'TS24119AFCK4780', '2022-06-22 17:27:26'),
 (2, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 6, 50, '2022-06-22', '17:40:00', '2022-06-22', '20:40:00', 3, 150, 'Nagad', 'UUAGF17371983', '2022-06-22 17:38:46'),
 (4, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-22', '17:55:00', '2022-06-22', '23:55:00', 6, 300, '', 'TYQI119819BSB', '2022-06-22 17:50:33'),
+(5, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 4, 30, '2022-06-24', '12:04:00', '2022-06-26', '12:02:00', 48, 1439, 'bKash', '465877', '2022-06-23 12:01:13'),
 (6, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '14:49:00', '2022-06-23', '17:49:00', 3, 90, 'bKash', 'USFH8230', '2022-06-23 14:47:34'),
-(7, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-23', '15:09:00', '2022-06-23', '18:09:00', 3, 150, 'Nagad', 'HJD71318032', '2022-06-23 15:08:19');
+(7, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-23', '15:09:00', '2022-06-23', '18:09:00', 3, 150, 'Nagad', 'HJD71318032', '2022-06-23 15:08:19'),
+(8, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-07-26', '16:56:00', '2022-07-26', '17:56:00', 1, 30, 'bKash', '2342342', '2022-07-26 16:54:33'),
+(9, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-07-26', '17:01:00', '2022-07-26', '18:00:00', 1, 29, 'bKash', '342532', '2022-07-26 17:00:49'),
+(10, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 2, 30, '2022-07-26', '17:03:00', '2022-07-26', '18:03:00', 1, 30, 'bKash', 'sdfs235', '2022-07-26 17:02:23'),
+(11, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 30, '2022-07-26', '17:27:00', '2022-07-26', '18:27:00', 1, 30, 'bKash', 'TSKAOi214', '2022-07-26 17:26:09');
 
 -- --------------------------------------------------------
 
@@ -252,13 +425,6 @@ CREATE TABLE `removed_bookingrequest` (
   `transaction_id` varchar(40) NOT NULL,
   `booking_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `removed_bookingrequest`
---
-
-INSERT INTO `removed_bookingrequest` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(3, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 30, '2022-06-23', '17:50:00', '2022-06-24', '17:50:00', 24, 720, 'bKash', 'JSAF6AIOFAHF', '2022-06-23 15:07:10');
 
 -- --------------------------------------------------------
 
@@ -331,6 +497,405 @@ INSERT INTO `slotlist_subid:2` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePe
 (13, 2, 'Large', 100, 'Not Connected', 'Available'),
 (14, 2, 'Large', 100, 'Not Connected', 'Available'),
 (15, 2, 'Large', 100, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:4`
+--
+
+CREATE TABLE `slotlist_subid:4` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:4`
+--
+
+INSERT INTO `slotlist_subid:4` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 4, 'Small', 30, 'Not Connected', 'Available'),
+(2, 4, 'Small', 30, 'Not Connected', 'Available'),
+(3, 4, 'Small', 30, 'Not Connected', 'Available'),
+(4, 4, 'Small', 30, 'Not Connected', 'Available'),
+(5, 4, 'Small', 30, 'Not Connected', 'Available'),
+(6, 4, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 4, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 4, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 4, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 4, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 4, 'Large', 80, 'Not Connected', 'Available'),
+(12, 4, 'Large', 80, 'Not Connected', 'Available'),
+(13, 4, 'Large', 80, 'Not Connected', 'Available'),
+(14, 4, 'Large', 80, 'Not Connected', 'Available'),
+(15, 4, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:5`
+--
+
+CREATE TABLE `slotlist_subid:5` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:5`
+--
+
+INSERT INTO `slotlist_subid:5` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 5, 'Small', 20, 'Not Connected', 'Available'),
+(2, 5, 'Small', 20, 'Not Connected', 'Available'),
+(3, 5, 'Small', 20, 'Not Connected', 'Available'),
+(4, 5, 'Small', 20, 'Not Connected', 'Available'),
+(5, 5, 'Small', 20, 'Not Connected', 'Available'),
+(6, 5, 'Medium', 30, 'Not Connected', 'Available'),
+(7, 5, 'Medium', 30, 'Not Connected', 'Available'),
+(8, 5, 'Medium', 30, 'Not Connected', 'Available'),
+(9, 5, 'Medium', 30, 'Not Connected', 'Available'),
+(10, 5, 'Medium', 30, 'Not Connected', 'Available'),
+(11, 5, 'Large', 50, 'Not Connected', 'Available'),
+(12, 5, 'Large', 50, 'Not Connected', 'Available'),
+(13, 5, 'Large', 50, 'Not Connected', 'Available'),
+(14, 5, 'Large', 50, 'Not Connected', 'Available'),
+(15, 5, 'Large', 50, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:6`
+--
+
+CREATE TABLE `slotlist_subid:6` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:6`
+--
+
+INSERT INTO `slotlist_subid:6` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 6, 'Small', 30, 'Not Connected', 'Available'),
+(2, 6, 'Small', 30, 'Not Connected', 'Available'),
+(3, 6, 'Small', 30, 'Not Connected', 'Available'),
+(4, 6, 'Small', 30, 'Not Connected', 'Available'),
+(5, 6, 'Small', 30, 'Not Connected', 'Available'),
+(6, 6, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 6, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 6, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 6, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 6, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 6, 'Large', 80, 'Not Connected', 'Available'),
+(12, 6, 'Large', 80, 'Not Connected', 'Available'),
+(13, 6, 'Large', 80, 'Not Connected', 'Available'),
+(14, 6, 'Large', 80, 'Not Connected', 'Available'),
+(15, 6, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:357`
+--
+
+CREATE TABLE `slotlist_subid:357` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:357`
+--
+
+INSERT INTO `slotlist_subid:357` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 357, 'Small', 20, 'Not Connected', 'Available'),
+(2, 357, 'Small', 20, 'Not Connected', 'Available'),
+(3, 357, 'Small', 20, 'Not Connected', 'Available'),
+(4, 357, 'Small', 20, 'Not Connected', 'Available'),
+(5, 357, 'Small', 20, 'Not Connected', 'Available'),
+(6, 357, 'Medium', 40, 'Not Connected', 'Available'),
+(7, 357, 'Medium', 40, 'Not Connected', 'Available'),
+(8, 357, 'Medium', 40, 'Not Connected', 'Available'),
+(9, 357, 'Medium', 40, 'Not Connected', 'Available'),
+(10, 357, 'Medium', 40, 'Not Connected', 'Available'),
+(11, 357, 'Large', 80, 'Not Connected', 'Available'),
+(12, 357, 'Large', 80, 'Not Connected', 'Available'),
+(13, 357, 'Large', 80, 'Not Connected', 'Available'),
+(14, 357, 'Large', 80, 'Not Connected', 'Available'),
+(15, 357, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:358`
+--
+
+CREATE TABLE `slotlist_subid:358` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:358`
+--
+
+INSERT INTO `slotlist_subid:358` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 358, 'Small', 20, 'Not Connected', 'Available'),
+(2, 358, 'Small', 20, 'Not Connected', 'Available'),
+(3, 358, 'Small', 20, 'Not Connected', 'Available'),
+(4, 358, 'Small', 20, 'Not Connected', 'Available'),
+(5, 358, 'Small', 20, 'Not Connected', 'Available'),
+(6, 358, 'Medium', 40, 'Not Connected', 'Available'),
+(7, 358, 'Medium', 40, 'Not Connected', 'Available'),
+(8, 358, 'Medium', 40, 'Not Connected', 'Available'),
+(9, 358, 'Medium', 40, 'Not Connected', 'Available'),
+(10, 358, 'Medium', 40, 'Not Connected', 'Available'),
+(11, 358, 'Large', 80, 'Not Connected', 'Available'),
+(12, 358, 'Large', 80, 'Not Connected', 'Available'),
+(13, 358, 'Large', 80, 'Not Connected', 'Available'),
+(14, 358, 'Large', 80, 'Not Connected', 'Available'),
+(15, 358, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:359`
+--
+
+CREATE TABLE `slotlist_subid:359` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:359`
+--
+
+INSERT INTO `slotlist_subid:359` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 359, 'Small', 20, 'Not Connected', 'Available'),
+(2, 359, 'Small', 20, 'Not Connected', 'Available'),
+(3, 359, 'Small', 20, 'Not Connected', 'Available'),
+(4, 359, 'Small', 20, 'Not Connected', 'Available'),
+(5, 359, 'Small', 20, 'Not Connected', 'Available'),
+(6, 359, 'Medium', 40, 'Not Connected', 'Available'),
+(7, 359, 'Medium', 40, 'Not Connected', 'Available'),
+(8, 359, 'Medium', 40, 'Not Connected', 'Available'),
+(9, 359, 'Medium', 40, 'Not Connected', 'Available'),
+(10, 359, 'Medium', 40, 'Not Connected', 'Available'),
+(11, 359, 'Large', 60, 'Not Connected', 'Available'),
+(12, 359, 'Large', 60, 'Not Connected', 'Available'),
+(13, 359, 'Large', 60, 'Not Connected', 'Available'),
+(14, 359, 'Large', 60, 'Not Connected', 'Available'),
+(15, 359, 'Large', 60, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:360`
+--
+
+CREATE TABLE `slotlist_subid:360` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:360`
+--
+
+INSERT INTO `slotlist_subid:360` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 360, 'Small', 20, 'Not Connected', 'Available'),
+(2, 360, 'Small', 20, 'Not Connected', 'Available'),
+(3, 360, 'Small', 20, 'Not Connected', 'Available'),
+(4, 360, 'Small', 20, 'Not Connected', 'Available'),
+(5, 360, 'Small', 20, 'Not Connected', 'Available'),
+(6, 360, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 360, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 360, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 360, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 360, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 360, 'Large', 80, 'Not Connected', 'Available'),
+(12, 360, 'Large', 80, 'Not Connected', 'Available'),
+(13, 360, 'Large', 80, 'Not Connected', 'Available'),
+(14, 360, 'Large', 80, 'Not Connected', 'Available'),
+(15, 360, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:361`
+--
+
+CREATE TABLE `slotlist_subid:361` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:361`
+--
+
+INSERT INTO `slotlist_subid:361` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 361, 'Small', 20, 'Not Connected', 'Available'),
+(2, 361, 'Small', 20, 'Not Connected', 'Available'),
+(3, 361, 'Small', 20, 'Not Connected', 'Available'),
+(4, 361, 'Small', 20, 'Not Connected', 'Available'),
+(5, 361, 'Small', 20, 'Not Connected', 'Available'),
+(6, 361, 'Small', 20, 'Not Connected', 'Available'),
+(7, 361, 'Small', 20, 'Not Connected', 'Available'),
+(8, 361, 'Small', 20, 'Not Connected', 'Available'),
+(9, 361, 'Small', 20, 'Not Connected', 'Available'),
+(10, 361, 'Small', 20, 'Not Connected', 'Available'),
+(11, 361, 'Medium', 50, 'Not Connected', 'Available'),
+(12, 361, 'Medium', 50, 'Not Connected', 'Available'),
+(13, 361, 'Medium', 50, 'Not Connected', 'Available'),
+(14, 361, 'Medium', 50, 'Not Connected', 'Available'),
+(15, 361, 'Medium', 50, 'Not Connected', 'Available'),
+(16, 361, 'Large', 80, 'Not Connected', 'Available'),
+(17, 361, 'Large', 80, 'Not Connected', 'Available'),
+(18, 361, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:362`
+--
+
+CREATE TABLE `slotlist_subid:362` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:362`
+--
+
+INSERT INTO `slotlist_subid:362` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 362, 'Small', 30, 'Not Connected', 'Available'),
+(2, 362, 'Small', 30, 'Not Connected', 'Available'),
+(3, 362, 'Small', 30, 'Not Connected', 'Available'),
+(4, 362, 'Small', 30, 'Not Connected', 'Available'),
+(5, 362, 'Small', 30, 'Not Connected', 'Available'),
+(6, 362, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 362, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 362, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 362, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 362, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 362, 'Large', 80, 'Not Connected', 'Available'),
+(12, 362, 'Large', 80, 'Not Connected', 'Available'),
+(13, 362, 'Large', 80, 'Not Connected', 'Available'),
+(14, 362, 'Large', 80, 'Not Connected', 'Available'),
+(15, 362, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:368`
+--
+
+CREATE TABLE `slotlist_subid:368` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:368`
+--
+
+INSERT INTO `slotlist_subid:368` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 368, 'Small', 20, 'Not Connected', 'Available'),
+(2, 368, 'Small', 20, 'Not Connected', 'Available'),
+(3, 368, 'Small', 20, 'Not Connected', 'Available'),
+(4, 368, 'Small', 20, 'Not Connected', 'Available'),
+(5, 368, 'Small', 20, 'Not Connected', 'Available'),
+(6, 368, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 368, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 368, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 368, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 368, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 368, 'Large', 80, 'Not Connected', 'Available'),
+(12, 368, 'Large', 80, 'Not Connected', 'Available'),
+(13, 368, 'Large', 80, 'Not Connected', 'Available'),
+(14, 368, 'Large', 80, 'Not Connected', 'Available'),
+(15, 368, 'Large', 80, 'Not Connected', 'Available');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slotlist_subid:369`
+--
+
+CREATE TABLE `slotlist_subid:369` (
+  `Slot_Id` int(11) NOT NULL,
+  `Sub_Admin_Id` int(11) NOT NULL,
+  `Slot_Size` varchar(20) NOT NULL,
+  `PricePerHour` int(20) NOT NULL,
+  `Slot_Status` varchar(20) NOT NULL,
+  `Booking_Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slotlist_subid:369`
+--
+
+INSERT INTO `slotlist_subid:369` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
+(1, 369, 'Small', 30, 'Not Connected', 'Available'),
+(2, 369, 'Small', 30, 'Not Connected', 'Available'),
+(3, 369, 'Small', 30, 'Not Connected', 'Available'),
+(4, 369, 'Small', 30, 'Not Connected', 'Available'),
+(5, 369, 'Small', 30, 'Not Connected', 'Available'),
+(6, 369, 'Medium', 50, 'Not Connected', 'Available'),
+(7, 369, 'Medium', 50, 'Not Connected', 'Available'),
+(8, 369, 'Medium', 50, 'Not Connected', 'Available'),
+(9, 369, 'Medium', 50, 'Not Connected', 'Available'),
+(10, 369, 'Medium', 50, 'Not Connected', 'Available'),
+(11, 369, 'Large', 80, 'Not Connected', 'Available'),
+(12, 369, 'Large', 80, 'Not Connected', 'Available'),
+(13, 369, 'Large', 80, 'Not Connected', 'Available'),
+(14, 369, 'Large', 80, 'Not Connected', 'Available'),
+(15, 369, 'Large', 80, 'Not Connected', 'Available');
 
 -- --------------------------------------------------------
 
@@ -418,16 +983,28 @@ INSERT INTO `subadmin_list` (`id`, `name`, `phone`, `email`, `password`) VALUES
 
 CREATE TABLE `total_balance` (
   `sub_id` int(11) NOT NULL,
-  `Total_Transaction` int(15) NOT NULL
+  `Total_Transaction` int(15) NOT NULL,
+  `Receivable` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `total_balance`
 --
 
-INSERT INTO `total_balance` (`sub_id`, `Total_Transaction`) VALUES
-(1, 810),
-(2, 1280);
+INSERT INTO `total_balance` (`sub_id`, `Total_Transaction`, `Receivable`) VALUES
+(1, 0, 0),
+(2, 0, 0),
+(4, 0, 0),
+(5, 0, 0),
+(6, 0, 0),
+(357, 0, 0),
+(358, 0, 0),
+(359, 0, 0),
+(360, 0, 0),
+(361, 0, 0),
+(362, 0, 0),
+(368, 0, 0),
+(369, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -586,6 +1163,72 @@ ALTER TABLE `balance_subid:2`
   ADD PRIMARY KEY (`Booking_Id`);
 
 --
+-- Indexes for table `balance_subid:4`
+--
+ALTER TABLE `balance_subid:4`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:5`
+--
+ALTER TABLE `balance_subid:5`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:6`
+--
+ALTER TABLE `balance_subid:6`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:357`
+--
+ALTER TABLE `balance_subid:357`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:358`
+--
+ALTER TABLE `balance_subid:358`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:359`
+--
+ALTER TABLE `balance_subid:359`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:360`
+--
+ALTER TABLE `balance_subid:360`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:361`
+--
+ALTER TABLE `balance_subid:361`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:362`
+--
+ALTER TABLE `balance_subid:362`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:368`
+--
+ALTER TABLE `balance_subid:368`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
+-- Indexes for table `balance_subid:369`
+--
+ALTER TABLE `balance_subid:369`
+  ADD PRIMARY KEY (`Booking_Id`);
+
+--
 -- Indexes for table `booked_list`
 --
 ALTER TABLE `booked_list`
@@ -610,6 +1253,12 @@ ALTER TABLE `parkingplace`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `payment_request`
+--
+ALTER TABLE `payment_request`
+  ADD PRIMARY KEY (`sub_id`);
+
+--
 -- Indexes for table `removed_bookedlist`
 --
 ALTER TABLE `removed_bookedlist`
@@ -631,6 +1280,72 @@ ALTER TABLE `slotlist_subid:1`
 -- Indexes for table `slotlist_subid:2`
 --
 ALTER TABLE `slotlist_subid:2`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:4`
+--
+ALTER TABLE `slotlist_subid:4`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:5`
+--
+ALTER TABLE `slotlist_subid:5`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:6`
+--
+ALTER TABLE `slotlist_subid:6`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:357`
+--
+ALTER TABLE `slotlist_subid:357`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:358`
+--
+ALTER TABLE `slotlist_subid:358`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:359`
+--
+ALTER TABLE `slotlist_subid:359`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:360`
+--
+ALTER TABLE `slotlist_subid:360`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:361`
+--
+ALTER TABLE `slotlist_subid:361`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:362`
+--
+ALTER TABLE `slotlist_subid:362`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:368`
+--
+ALTER TABLE `slotlist_subid:368`
+  ADD PRIMARY KEY (`Slot_Id`);
+
+--
+-- Indexes for table `slotlist_subid:369`
+--
+ALTER TABLE `slotlist_subid:369`
   ADD PRIMARY KEY (`Slot_Id`);
 
 --
@@ -665,7 +1380,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `booking_request`
 --
 ALTER TABLE `booking_request`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `slotlist_subid:1`
@@ -677,6 +1392,72 @@ ALTER TABLE `slotlist_subid:1`
 -- AUTO_INCREMENT for table `slotlist_subid:2`
 --
 ALTER TABLE `slotlist_subid:2`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:4`
+--
+ALTER TABLE `slotlist_subid:4`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:5`
+--
+ALTER TABLE `slotlist_subid:5`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:6`
+--
+ALTER TABLE `slotlist_subid:6`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:357`
+--
+ALTER TABLE `slotlist_subid:357`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:358`
+--
+ALTER TABLE `slotlist_subid:358`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:359`
+--
+ALTER TABLE `slotlist_subid:359`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:360`
+--
+ALTER TABLE `slotlist_subid:360`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:361`
+--
+ALTER TABLE `slotlist_subid:361`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:362`
+--
+ALTER TABLE `slotlist_subid:362`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:368`
+--
+ALTER TABLE `slotlist_subid:368`
+  MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `slotlist_subid:369`
+--
+ALTER TABLE `slotlist_subid:369`
   MODIFY `Slot_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --

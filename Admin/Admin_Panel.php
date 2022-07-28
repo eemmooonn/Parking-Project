@@ -91,6 +91,18 @@
               <span class="link-name">Payment</span>
             </a>
           </li>
+          <li>
+            <a href="Payment_Request.php">
+              <i class="uil uil-angle-double-down"></i>
+              <span class="link-name">Payment Request</span>
+            </a>
+          </li>
+          <li>
+            <a href="Payment_History.php">
+              <i class="uil uil-receipt"></i>
+              <span class="link-name">Payment History</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout-mode">
@@ -176,6 +188,22 @@
                 <span class="number"><?php echo ''.$current_balance.''?></span>
               </div>
             </a>
+
+            <a class="box box2">
+              <div class="box box2">
+                <i class="uil uil-dollar-alt"></i>
+                <span class="text">Admin Balance(TK)</span>
+                <?php
+                  $sql="SELECT SUM(amount) FROM `payment_history`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_fetch_assoc($result);
+                  $balance = $row['SUM(amount)'];
+                ?>
+                <span class="number"><?php echo ''.$balance.''?></span> 
+              </div>
+            </a>
+
+           
 
           </div>
         </div>

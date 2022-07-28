@@ -345,6 +345,7 @@ nav.close ~ .dashboard .top{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 10px;
 }
 .dash-content .boxes .box{
     display: flex;
@@ -353,6 +354,7 @@ nav.close ~ .dashboard .top{
     border-radius: 12px;
     width: calc(100% / 3 - 15px);
     padding: 15px 20px;
+    margin-top: 10px;
     background-color: var(--box1-color);
     transition: var(--tran-05);
 }

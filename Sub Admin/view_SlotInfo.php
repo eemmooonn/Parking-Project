@@ -78,6 +78,12 @@ $password = $row["password"];
             <span class="link-name">Booked Slot Info</span>
           </a>
         </li>
+        <li>
+            <a href="Payment.php">
+              <i class="uil uil-bill"></i>
+              <span class="link-name">Payment</span>
+            </a>
+        </li>
 
       </ul>
 

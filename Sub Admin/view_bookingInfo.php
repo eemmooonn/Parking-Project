@@ -99,6 +99,12 @@ if(isset($_POST['remove']))
             <span class="link-name">Booked Slot Info</span>
           </a>
         </li>
+        <li>
+            <a href="Payment.php">
+              <i class="uil uil-bill"></i>
+              <span class="link-name">Payment</span>
+            </a>
+        </li>
 
       </ul>
 
@@ -133,7 +139,7 @@ if(isset($_POST['remove']))
       <div class="overview">
         <a href="SubAdmin.php">
           <div class="title">
-            <i class="uil uil-info-circle"></i>
+            <i class="uil uil-car"></i>
             <span class="text">Booked Slot Information</span>
           </div>
         </a>

@@ -15,6 +15,34 @@ $name = $row["name"];
 $phone = $row["phone"];
 $email = $row["email"];
 $password = $row["password"];
+
+
+if(isset($_POST['confirm']))
+{
+    $amount = $_POST["totalAmount"];
+    $paymentMethod = $_POST["paymentMethod"]; 
+    $transactionId = $_POST["transactionId"];
+
+    $sql = "INSERT INTO `payment_request` (sub_id, 
+                                           payment_method, 
+                                           amount, 
+                                           transaction_id)   
+    values('$id',
+           '$paymentMethod', 
+           '$amount', 
+           '$transactionId') ";
+    
+    $insert = mysqli_query($con, $sql);
+    if($insert)
+    {
+      echo "<script>alert('Your payment request is received. You will be notified very soon!') </script>";
+    }
+    else
+    {
+      echo "<script>alert('Please submit everything correctly!') </script>";
+    }
+}
+    
 ?>
 
 
@@ -119,7 +147,7 @@ $password = $row["password"];
       <div class="overview">
         <a href="SubAdmin.php">
           <div class="title">
-            <i class="uil uil-info-circle"></i>
+            <i class="uil uil-bill"></i>
             <span class="text">Payment</span>
           </div>
         </a>
@@ -135,16 +163,67 @@ $password = $row["password"];
                 while ($row = mysqli_fetch_assoc($result)) {
                     $Admin_Receivable = $row["Receivable"];
 
+              if($Admin_Receivable>0)  {
+
                 echo 
                 ' 
                   <p class="SubadminPayable">Your total Payable: '.$Admin_Receivable.' TK</p>
-                  <br>
-                  <button class="SubadminPayButton">Pay</button>
+                  <div class="container">
+                  <form method="POST">
+      
+                    <header>Please Read The Payment System Carefully</header>
+                    <br>
+                    <p class="instructions">1. Select payment method. <br>
+                      2. Send <b>'.$Admin_Receivable.' TK</b> to the number given below.<br>
+                      3. <b>01818-557778</b> (bKash, Nagad, Rocket). <br>
+                      4. After sending money enter the <b>Transaction ID</b> and Click <b>Confirm</b>.<br>
+                    </p>
+                    <br>
+      
+                      <div class="form first">
+                        <div class="fields">
+                          <br>
+                          <div class="input-field">
+                            <label for="">Total Payable(TK):</label>
+                            <input type="number" name="totalAmount" id="" class="form-control" placeholder="" value="'.$Admin_Receivable.'" required/>
+                          </div> 
+      
+                          <div class="input-field">
+                            <label for="">Payment Method</label>
+                            <select name="paymentMethod" id="" required>
+                              <option disabled selected>Select payment method</option>
+                              <option>bKash</option>
+                              <option>Nagad</option>
+                              <option>Rocket</option>
+                            </select>
+                          </div>
+                          <div class="input-field">
+                              <label for="">Enter Transaction ID:</label>
+                              <input type="text" name="transactionId" id="" class="form-control" placeholder="Enter the transaction ID"  required/>
+                          </div>
+                          
+                        </div>
+      
+                          <button type="submit" class="submit" name="confirm">Confirm</button>
+      
+                      </div>
+                  </form>
+              </div>
                 ';
                 }
+                else {
+                  echo 
+                ' 
+                  <p class="SubadminPayable">Your total Payable: 0 TK</p>
+                ';
+                }
+                }
               }
+              
             ?>
         </div>
+      
+        
         
 
                 <div class="activity-data">

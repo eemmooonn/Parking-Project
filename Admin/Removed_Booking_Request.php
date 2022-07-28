@@ -92,6 +92,18 @@ include '../connect.php';
               <span class="link-name">Payment</span>
             </a>
           </li>
+          <li>
+            <a href="Payment_Request.php">
+              <i class="uil uil-angle-double-down"></i>
+              <span class="link-name">Payment Request</span>
+            </a>
+          </li>
+          <li>
+            <a href="Payment_History.php">
+              <i class="uil uil-receipt"></i>
+              <span class="link-name">Payment History</span>
+            </a>
+          </li>
       </ul>
 
       <ul class="logout-mode">

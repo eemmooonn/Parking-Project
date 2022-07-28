@@ -4,6 +4,46 @@ if (!isset($_SESSION['AdminLoginName'])) {
   header("location:Admin_Panel_Login.php");
 }
 include '../connect.php';
+
+?>
+<?php 
+
+if(isset($_POST['accept']))
+{
+  $id = $_POST["id"];
+  $payment_method= $_POST["payment_method"];
+  $amount=$_POST["amount"];
+  $transaction_id=$_POST["transaction_id"];
+
+
+  $sqlBalance="UPDATE `total_balance` SET Receivable = Receivable-$amount WHERE sub_id=$id ";
+  $sqlBalanceUpdate = mysqli_query($con, $sqlBalance);
+
+  
+  $sqlInsert = "INSERT INTO `payment_history` (`sub_id`, 
+                                        `payment_method`, 
+                                        `amount`, 
+                                        `transaction_id`) 
+
+  VALUES ('$id', '$payment_method', '$amount', '$transaction_id');";
+  $insert = mysqli_query($con, $sqlInsert);
+
+  
+
+  $sqlDelete="DELETE FROM `payment_request` WHERE `sub_id` = $id";
+  $delete = mysqli_query($con, $sqlDelete);
+}
+if(isset($_POST['delete']))
+{
+  $id = $_POST["id"];
+  $payment_method= $_POST["payment_method"];
+  $amount=$_POST["amount"];
+  $transaction_id=$_POST["transaction_id"];
+
+  $sqlDelete="DELETE FROM `payment_request` WHERE `sub_id` =$id";
+  $delete = mysqli_query($con, $sqlDelete);
+}
+
 ?>
 
 
@@ -125,7 +165,7 @@ include '../connect.php';
       <form action="" method="POST" class="search-box">
         <div class="search-box">
           <i class="uil uil-search"></i>
-          <input type="text" name="search-text" placeholder="Search here by Sub-Admin ID" required />
+          <input type="text" name="search-text" placeholder="Search here by ID" required />
           <button type="submit" class="search" name="search-btn">Search</button>
         </div>
       </form>
@@ -139,10 +179,10 @@ include '../connect.php';
 
     <div class="dash-content">
       <div class="overview">
-        <a href="Overtime.php">
+        <a href="view_SubAdminList.php">
           <div class="title">
-            <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Overtime</span>
+            <i class="uil uil-angle-double-down"></i>
+            <span class="text">Payment Request</span>
           </div>
         </a>
       </div>
@@ -151,48 +191,86 @@ include '../connect.php';
         <table class="styled-table">
           <thead>
             <tr>
-                <th scope="col">Sub-Admin ID</th>
-                <th scope="col">Total Time</th>
-                
+              <th scope="col">ID</th>
+              <th scope="col">Payment Method</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Transaction ID</th>
+              <th scope="col">Request</th>
             </tr>
           </thead>
           <tbody>
             <?php
             if (isset($_POST['search-btn'])) {
               $SearchText = $_POST['search-text'];
-              $sql_search = "SELECT * FROM `overtime` WHERE Sub_Id='$SearchText'";
+              $sql_search = "SELECT * FROM `payment_request` WHERE sub_id='$SearchText'";
               $SearchResult = mysqli_query($con, $sql_search);
               if (mysqli_num_rows($SearchResult) > 0) {
                 while ($row = mysqli_fetch_assoc($SearchResult)) {
-                    $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                  $id = $row['sub_id'];
+                  $payment_method = $row["payment_method"];
+                  $amount = $row["amount"];
+                  $transaction_id = $row["transaction_id"];
 
                   echo '
                                 <tr>
-                                    <td>' . $Sub_Id . '</td>
-                                    <td>' . $Total_Overtime . '</td>
+                                    <td>' . $id . '</td>
+                                    <td>' . $payment_method . '</td>
+                                    <td>' . $amount . '</td>
+                                    <td>' . $transaction_id . '</td>
+
+                                    <td>
+                                    <form method="post">
+                                        
+                                        <input name="id" type="hidden" value="'.$id.'">
+                                        <input name="payment_method" type="hidden" value="'.$payment_method.'">
+                                        <input name="amount" type="hidden" value="'.$amount.'">
+                                        <input name="transaction_id" type="hidden" value="'.$transaction_id.'">
+
+                                        <button name="accept">Accept</button>
+                                        <button name="delete">Delete</button>
+                                    </form>
+                                    </td>
+
                                 </tr>';
                 }
               } else {
                 echo '
                             <tr>
-                              <td colspan="2">No Record Found</td>
+                              <td colspan="4">No Record Found</td>
                             </tr>
                             ';
               }
             } else {
-              $sql = "SELECT * FROM `overtime`";
+              $sql = "SELECT * FROM `payment_request`";
               $result = mysqli_query($con, $sql);
-              if ($result) 
-              {
+              if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                    $id = $row['sub_id'];
+                    $payment_method = $row["payment_method"];
+                    $amount = $row["amount"];
+                    $transaction_id = $row["transaction_id"];
 
                   echo '
                                 <tr>
-                                    <td>' . $Sub_Id . '</td>
-                                    <td>' . $Total_Overtime . ' Hour</td>
+                                    <td>' . $id . '</td>
+                                    <td>' . $payment_method . '</td>
+                                    <td>' . $amount . '</td>
+                                    <td>' . $transaction_id . '</td>
+
+                                    <td>
+                                    <form method="post">
+                                        
+                                        <input name="id" type="hidden" value="'.$id.'">
+                                        <input name="payment_method" type="hidden" value="'.$payment_method.'">
+                                        <input name="amount" type="hidden" value="'.$amount.'">
+                                        <input name="transaction_id" type="hidden" value="'.$transaction_id.'">
+
+                                        <button name="accept">Accept</button>
+                                        <button name="delete">Delete</button>
+                                    </form>
+                                    
+                                    </td>
+
                                 </tr>';
                 }
               }
