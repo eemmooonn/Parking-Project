@@ -189,7 +189,7 @@
               </div>
             </a>
 
-            <a class="box box2">
+            <a class="box box2" href="Payment_History.php">
               <div class="box box2">
                 <i class="uil uil-dollar-alt"></i>
                 <span class="text">Admin Balance(TK)</span>

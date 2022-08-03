@@ -1,6 +1,25 @@
 <?php
-$name = $_POST['name'];
-$phone = $_POST['phone'];
+$testName = trim($_POST['name']);
+$nameStructure = '/^[A-Za-z ]*$/';
+if(preg_match($nameStructure, $testName) && strlen($testName)>0)
+{
+    $name=$testName;
+}
+else {
+    echo "<script>alert('Please Enter a valid name!') </script>";
+    die();
+}
+$testPhone = trim($_POST['phone']);
+$phoneStructure = '/^[0-9]{11,11}$/';
+if(preg_match($phoneStructure, $testPhone))
+{
+    $phone=$testPhone;
+}
+else {
+    echo "<script>alert('Please Enter a valid phone number!') </script>";
+    die();
+}
+ 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -32,9 +51,11 @@ if(!empty($name) || !empty($phone) || !empty($email) || !empty($password)){
             $stmt = $conn->prepare($INSERT);
             $stmt->bind_param("siss", $name, $phone, $email, $password);
             $stmt->execute();
-            echo "Submitted Successfully!";
+            //echo "Submitted Successfully!";
+            header("location:SubAdminLogin.php");
+
         } else{
-            echo "Already have an account using this email!";
+            echo "<script>alert('Already have an account using this email!') </script>";
         }
         $stmt->close();
         $conn->close();

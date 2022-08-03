@@ -69,7 +69,7 @@
                     type="submit"
                     name="submit"
                     class="submit"
-                    value="Sumbit"
+                    value="Submit"
                   />
                 </div>
 
