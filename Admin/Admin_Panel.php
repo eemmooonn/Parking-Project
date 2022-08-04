@@ -188,9 +188,22 @@
                 <span class="number"><?php echo ''.$current_balance.''?></span>
               </div>
             </a>
-
-            <a class="box box2" href="Payment_History.php">
+            <a class="box box2" href="Current_Booked_Slot.php">
               <div class="box box2">
+                <i class="uil uil-arrows-merge"></i>
+                <span class="text">Current Booked Slot</span>
+
+                <?php
+                  $sql="SELECT * FROM `booked_list`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_num_rows($result);
+                ?>
+                <span class="number"><?php echo ''.$row.''?></span> 
+              </div>
+            </a>
+
+            <a class="box box3" href="Payment_History.php">
+              <div class="box box3">
                 <i class="uil uil-dollar-alt"></i>
                 <span class="text">Admin Balance(TK)</span>
                 <?php
@@ -203,22 +216,26 @@
               </div>
             </a>
 
+            <a class="box box1" href="Payment_Request.php">
+              <div class="box box1">
+                <i class="uil uil-angle-double-down"></i>
+                <span class="text">Payment Request</span>
+
+                <?php
+                  $sql="SELECT * FROM `payment_request`";
+                  $result=mysqli_query($con,$sql);
+                  $row = mysqli_num_rows($result);
+                ?>
+                <span class="number"><?php echo ''.$row.''?></span> 
+              </div>
+            </a>
+            
+
            
 
           </div>
         </div>
       
-        <div class="activity">
-          <div class="title">
-            <i class="uil uil-clock-three"></i>
-            <span class="text">Recent Activity</span>
-          </div>
-
-          <div class="activity-data">
- 
-          </div>
-
-        </div>
         
       </div>
     </section>

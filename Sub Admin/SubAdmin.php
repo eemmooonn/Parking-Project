@@ -168,21 +168,29 @@ $id = $row['id'];
               
             </div>
           </a>
+          <a class="box box3" href="Payment.php">
+            <div class="box box3">
+              <i class="uil uil-dollar-alt"></i>
+              <span class="text">Payable(TK)</span>
+
+              <?php
+                $sql = "SELECT * FROM `total_balance` WHERE sub_id='$id'";
+                $result=mysqli_query($con,$sql);
+                $row = mysqli_fetch_assoc($result);
+                if ($row!=0) {
+                  $amount = $row['Receivable'];
+                  echo '<span class="number">'.$amount.'</span>';
+                }
+                else {
+                  echo '<span class="number">0</span>';
+                }
+              ?> 
+            </div>
+          </a>
 
         </div>
       </div>
 
-      <div class="activity">
-        <div class="title">
-          <i class="uil uil-clock-three"></i>
-          <span class="text">Recent Activity</span>
-        </div>
-
-        <div class="activity-data">
-
-        </div>
-
-      </div>
 
     </div>
   </section>
