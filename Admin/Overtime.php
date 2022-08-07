@@ -165,7 +165,7 @@ include '../connect.php';
               if (mysqli_num_rows($SearchResult) > 0) {
                 while ($row = mysqli_fetch_assoc($SearchResult)) {
                     $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                    $Total_Overtime = intval(($row["Total_Overtime"])/60);
 
                   echo '
                                 <tr>
@@ -187,7 +187,7 @@ include '../connect.php';
               {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $Sub_Id = $row["Sub_Id"];
-                    $Total_Overtime = ($row["Total_Overtime"])/60;
+                    $Total_Overtime = intval(($row["Total_Overtime"])/60);
 
                   echo '
                                 <tr>

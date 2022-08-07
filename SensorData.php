@@ -22,7 +22,7 @@ class ArduinoData
     }
     else 
     {
-        $status1="Parked";
+        $status1="Occupied";
     }
     $query1 = "UPDATE `slotlist_subid:1` SET `Slot_Status` ='$status1' WHERE `Slot_Id` = 1";
     $result1 = mysqli_query($con,$query1);
@@ -35,7 +35,7 @@ class ArduinoData
     }
     else 
     {
-        $status2="Parked";
+        $status2="Occupied";
     }
 
     $query2 = "UPDATE `slotlist_subid:1` SET `Slot_Status` ='$status2' WHERE `Slot_Id` = 2";
@@ -52,7 +52,7 @@ class ArduinoData
     $bookingstatus1 = $row1["Booking_Status"];
 
 
-    if ($slotstatus1=="Parked" && $bookingstatus1=="Available") 
+    if ($slotstatus1=="Occupied" && $bookingstatus1=="Available") 
     {
         $sqlOverTime1="UPDATE `overtime` SET Total_Overtime = Total_Overtime+1 WHERE Sub_Id=1";
         $sqlOverTime1Update1 = mysqli_query($con, $sqlOverTime1);
@@ -64,7 +64,7 @@ class ArduinoData
     $slotstatus2 = $row2["Slot_Status"];
     $bookingstatus2 = $row2["Booking_Status"];
 
-    if ($slotstatus2=="Parked" && $bookingstatus2=="Available") 
+    if ($slotstatus2=="Occupied" && $bookingstatus2=="Available") 
     {
         $sqlOverTime2="UPDATE `overtime` SET Total_Overtime = Total_Overtime+1 WHERE Sub_Id=1";
         $sqlOverTime2Update2 = mysqli_query($con, $sqlOverTime2);
