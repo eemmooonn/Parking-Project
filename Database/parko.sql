@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2022 at 09:32 PM
+-- Generation Time: Aug 12, 2022 at 07:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -61,7 +61,8 @@ INSERT INTO `balance_subid:1` (`Booking_Id`, `Total_Paid`, `Booked_Date`) VALUES
 (8, 30, '2022-07-26 16:56:01'),
 (9, 29, '2022-07-26 17:01:01'),
 (10, 30, '2022-07-26 17:03:01'),
-(11, 30, '2022-07-26 17:27:01');
+(11, 30, '2022-07-26 17:27:01'),
+(12, 30, '2022-08-07 20:22:04');
 
 -- --------------------------------------------------------
 
@@ -275,7 +276,7 @@ CREATE TABLE `overtime` (
 --
 
 INSERT INTO `overtime` (`Sub_Id`, `Total_Overtime`) VALUES
-(1, 0),
+(1, 127),
 (2, 0),
 (4, 0),
 (5, 0),
@@ -345,6 +346,15 @@ CREATE TABLE `payment_history` (
   `transaction_id` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `payment_history`
+--
+
+INSERT INTO `payment_history` (`sub_id`, `payment_method`, `amount`, `transaction_id`) VALUES
+(1, 'bKash', 30, 'GAJA1723781'),
+(1, 'bKash', 300, 'YSYSY'),
+(1, 'bKash', 10, '69');
+
 -- --------------------------------------------------------
 
 --
@@ -389,16 +399,7 @@ CREATE TABLE `removed_bookedlist` (
 --
 
 INSERT INTO `removed_bookedlist` (`booking_id`, `user_id`, `user_name`, `user_phone`, `vehicle_No`, `place_id`, `slot_No`, `priceperhour`, `arrival_date`, `arrival_time`, `departure_date`, `departure_time`, `totalparkinghour`, `totalrentcost`, `payment_method`, `transaction_id`, `booking_time`) VALUES
-(1, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '15:30:00', '2022-06-24', '10:30:00', 19, 570, 'bKash', 'TS24119AFCK4780', '2022-06-22 17:27:26'),
-(2, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 6, 50, '2022-06-22', '17:40:00', '2022-06-22', '20:40:00', 3, 150, 'Nagad', 'UUAGF17371983', '2022-06-22 17:38:46'),
-(4, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-22', '17:55:00', '2022-06-22', '23:55:00', 6, 300, '', 'TYQI119819BSB', '2022-06-22 17:50:33'),
-(5, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 4, 30, '2022-06-24', '12:04:00', '2022-06-26', '12:02:00', 48, 1439, 'bKash', '465877', '2022-06-23 12:01:13'),
-(6, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-06-23', '14:49:00', '2022-06-23', '17:49:00', 3, 90, 'bKash', 'USFH8230', '2022-06-23 14:47:34'),
-(7, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 9, 50, '2022-06-23', '15:09:00', '2022-06-23', '18:09:00', 3, 150, 'Nagad', 'HJD71318032', '2022-06-23 15:08:19'),
-(8, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-07-26', '16:56:00', '2022-07-26', '17:56:00', 1, 30, 'bKash', '2342342', '2022-07-26 16:54:33'),
-(9, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-07-26', '17:01:00', '2022-07-26', '18:00:00', 1, 29, 'bKash', '342532', '2022-07-26 17:00:49'),
-(10, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 2, 30, '2022-07-26', '17:03:00', '2022-07-26', '18:03:00', 1, 30, 'bKash', 'sdfs235', '2022-07-26 17:02:23'),
-(11, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 3, 30, '2022-07-26', '17:27:00', '2022-07-26', '18:27:00', 1, 30, 'bKash', 'TSKAOi214', '2022-07-26 17:26:09');
+(12, 511, 'Emon Mazumder', '1818557778', 'Dhaka Metro LA-2354', 1, 1, 30, '2022-08-07', '20:22:00', '2022-08-07', '21:22:00', 1, 30, 'bKash', 'HSDBAHJD812389', '2022-08-07 20:20:49');
 
 -- --------------------------------------------------------
 
@@ -446,8 +447,8 @@ CREATE TABLE `slotlist_subid:1` (
 --
 
 INSERT INTO `slotlist_subid:1` (`Slot_Id`, `Sub_Admin_Id`, `Slot_Size`, `PricePerHour`, `Slot_Status`, `Booking_Status`) VALUES
-(1, 1, 'Small', 30, 'Not Connected', 'Available'),
-(2, 1, 'Small', 30, 'Not Connected', 'Available'),
+(1, 1, 'Small', 30, 'Empty', 'Available'),
+(2, 1, 'Small', 30, 'Empty', 'Available'),
 (3, 1, 'Small', 30, 'Not Connected', 'Available'),
 (4, 1, 'Small', 30, 'Not Connected', 'Available'),
 (5, 1, 'Small', 30, 'Not Connected', 'Available'),
@@ -973,7 +974,12 @@ INSERT INTO `subadmin_list` (`id`, `name`, `phone`, `email`, `password`) VALUES
 (406, 'Francoise Birchwood', 2048200927, 'fbirchwood1d@dailymail.co.uk', 'qyqXyLgR'),
 (407, 'Testttt232', 2147483647, 'qtiyr@hjF.COM', '25262'),
 (408, 'Test848709', 2147483647, 'kjlasfhjskf@gmail.com', '2636324'),
-(411, 'Ferdaus', 191245678, 'ferdaus@gmail.com', '123456');
+(411, 'Ferdaus', 191245678, 'ferdaus@gmail.com', '123456'),
+(412, '234', 1714687843, 'sgsg@gmail.com', '13144'),
+(413, '  ', 1714687843, 'sgsg13@gmail.com', '13144'),
+(414, 'Test5532', 1714687843, 'sgsg13143@gmail.com', '13144'),
+(415, 'testemadklad', 914901240, 'tamim9123013@yahoo.com', '1023914nsafj'),
+(416, 'TestNumber', 1714687825, 'test192389@yahoo.com', '1264187421');
 
 -- --------------------------------------------------------
 
@@ -992,7 +998,7 @@ CREATE TABLE `total_balance` (
 --
 
 INSERT INTO `total_balance` (`sub_id`, `Total_Transaction`, `Receivable`) VALUES
-(1, 0, 0),
+(1, 30, 46),
 (2, 0, 0),
 (4, 0, 0),
 (5, 0, 0),
@@ -1138,7 +1144,13 @@ INSERT INTO `user_list` (`id`, `name`, `phone`, `email`, `password`, `vehicleNo`
 (511, 'Emon Mazumder', 1818557778, 'mazumderemon@gmail.com', '123456', 'Dhaka Metro LA-2354', 'osita.jpg'),
 (515, 'Masnakd', 9348242, 'qeon@gmail.com', '123456', '', ''),
 (516, 'Test', 78182912, 'sgtesttt2@gmail.com', '123456', '', ''),
-(517, 'Test', 91299, 'qwe@gaena.com', '123456', '', '');
+(517, 'Test', 91299, 'qwe@gaena.com', '123456', '', ''),
+(518, 'TestJHaghasj', 2147483647, 'hjafafj@yahoo.com', '17316387', '', ''),
+(519, 'TestJHaghasj', 2147483647, 'hjafafj19124091@yahoo.com', '17316387', '', ''),
+(520, 'TestJjkadnk', 2147483647, 'ajadjjkad1@yahoo.com', '17316387', '', ''),
+(521, 'TestJjkadnk', 2147483647, 'ajadjjkad1193@yahoo.com', '0923940912034', '', ''),
+(522, 'testkjgnsdkkk ajFHAF', 1714687825, 'test979912@gamil.com', '1237814781', '', ''),
+(523, 'Testkafjkalf', 1818557778, 'test1389@gmail.com', 'qwoeiqejqo', '', '');
 
 --
 -- Indexes for dumped tables
@@ -1380,7 +1392,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `booking_request`
 --
 ALTER TABLE `booking_request`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `slotlist_subid:1`
@@ -1464,13 +1476,13 @@ ALTER TABLE `slotlist_subid:369`
 -- AUTO_INCREMENT for table `subadmin_list`
 --
 ALTER TABLE `subadmin_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=412;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=417;
 
 --
 -- AUTO_INCREMENT for table `user_list`
 --
 ALTER TABLE `user_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=518;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=524;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
