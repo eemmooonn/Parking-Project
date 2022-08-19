@@ -1,2 +1,1 @@
-# Online Smart Parking Management System (ParkO)
-
+# IoT Based online integrated system to share available parking space
